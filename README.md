@@ -54,7 +54,7 @@ Cloudflare Pages 連接主要 repo，設定：
 | Build output directory | `dist`                           |
 | Node.js                | 22.12 以上，建議 22 的最新修補版 |
 
-`public/_redirects` 明確將 Vue 頁面路由代理至 `/index.html`（HTTP 200，保留網址與 query），`/assets/*` 維持靜態資產。`dist` 不放根目錄 `404.html`，其他路徑使用 Cloudflare Pages 內建 SPA fallback。路由與資產使用網站根目錄；不要將 `dist` 直接用目前 GitHub Pages 的子路徑設定部署。先驗證分支預覽再合併到正式分支。
+`public/_redirects` 明確將 Vue 頁面路由代理至網站入口 `/`（HTTP 200，保留網址與 query），`/assets/*` 維持靜態資產。`dist` 不放根目錄 `404.html`，其他路徑使用 Cloudflare Pages 內建 SPA fallback。路由與資產使用網站根目錄；不要將 `dist` 直接用目前 GitHub Pages 的子路徑設定部署。先驗證分支預覽再合併到正式分支。
 
 Cloudflare Pages GitHub App 已授權存取主要 repo。推送至 `main` 會觸發正式部署，其他分支供預覽驗證。
 
