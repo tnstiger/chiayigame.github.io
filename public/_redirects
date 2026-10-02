@@ -1,0 +1,8 @@
+# Vue history routes; keep /assets/* served as static files.
+/intro /index.html 200
+/map /index.html 200
+/zone/* /index.html 200
+/stories /index.html 200
+/stories/* /index.html 200
+/points /index.html 200
+/reward /index.html 200
