@@ -43,7 +43,9 @@ npm run build
 
 ## Cloudflare Pages
 
-連接 **tina458615/chiayigame.github.io** 這個 repo，設定：
+主要開發與部署 repo 為 **tnstiger/chiayigame.github.io**，正式網站為 https://chiayigame.pages.dev 。案主原 repo 保留為 upstream；後續修改請推送至主要 repo。
+
+Cloudflare Pages 連接主要 repo，設定：
 
 | 欄位                   | 值                               |
 | ---------------------- | -------------------------------- |
@@ -54,6 +56,6 @@ npm run build
 
 `dist` 不放根目錄 `404.html`，使用 Cloudflare Pages 內建 SPA fallback。路由與資產使用網站根目錄；不要將 `dist` 直接用目前 GitHub Pages 的子路徑設定部署。先驗證分支預覽再合併到正式分支。
 
-Cloudflare GitHub App 必須獲准存取案主 repo；具有 Git push 權限不代表可以替 repo 擁有者授權 App。
+Cloudflare Pages GitHub App 已授權存取主要 repo。推送至 `main` 會觸發正式部署，其他分支供預覽驗證。
 
 上線檢查：深層網址直接開啟與重新整理、舊入口、五區通關、錯誤圖片、相機權限、返回及關閉串流、iPhone Safari 與 Android Chrome 實機辨識。
