@@ -1,5 +1,6 @@
+import { scanTargets } from "./scan-targets.js";
+
 export function createScanner() {
-  // One shared image target for this demo. Replace per-stage mappings when more targets are ready.
   const MINDAR_URL =
     "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image.prod.js";
   const TARGET_URL = "/assets/targets/targets.mind";
@@ -28,7 +29,7 @@ export function createScanner() {
     });
     try {
       const { dimensions } = controller.addImageTargetsFromBuffer(targetBuffer);
-      if (!dimensions.length) throw new Error();
+      if (dimensions.length !== scanTargets.length) throw new Error();
     } catch {
       releaseController();
       targetBuffer = null;
@@ -101,20 +102,46 @@ export function createScanner() {
 
   async function detectTarget(scan, onStatus) {
     let matches = 0;
+    let previousTargetIndex = -1;
     try {
       while (isCurrent(scan) && !scan.found) {
         const { featurePoints } = await controller.detect(scan.video);
         if (!isCurrent(scan)) return;
-        const { modelViewTransform } = await controller.match(featurePoints, 0);
-        if (!isCurrent(scan)) return;
-        matches = modelViewTransform ? matches + 1 : 0;
+        let matchedTargetIndex = -1;
+        for (
+          let targetIndex = 0;
+          targetIndex < scanTargets.length;
+          targetIndex++
+        ) {
+          const { modelViewTransform } = await controller.match(
+            featurePoints,
+            targetIndex,
+          );
+          if (!isCurrent(scan)) return;
+          if (modelViewTransform) {
+            matchedTargetIndex = targetIndex;
+            break;
+          }
+        }
+        matches =
+          matchedTargetIndex === -1
+            ? 0
+            : matchedTargetIndex === previousTargetIndex
+              ? matches + 1
+              : 1;
+        previousTargetIndex = matchedTargetIndex;
         if (matches >= 2) {
           scan.found = true;
           // Emit once after two image matches; this game needs recognition, not a tracked 3D pose.
           scan.video.dispatchEvent(
             new CustomEvent("scanSuccess", {
               bubbles: true,
-              detail: { source: "mindar", targetIndex: 0 },
+              detail: {
+                source: "mindar",
+                targetIndex: matchedTargetIndex,
+                targetId: scanTargets[matchedTargetIndex].id,
+                targetLabel: scanTargets[matchedTargetIndex].label,
+              },
             }),
           );
           return;

@@ -98,7 +98,7 @@ onBeforeUnmount(() => {
     </div>
     <div class="demoNote">
       將鏡頭對準目標圖片，辨識成功後會自動過關。請保持圖片完整、光線充足。此
-      Demo 的掃描關卡目前共用同一張目標圖片。
+      Demo 支援原有目標及桃喜 01、04、12、15、29，共六張目標圖片。
     </div>
   </section>
 </template>

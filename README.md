@@ -39,7 +39,9 @@ npm run build
 
 `src/services/scanner.js` 使用 MindAR 1.2.5，從固定版本 CDN 載入；需要網路、WebGL，以及 HTTPS 或 localhost。首頁空閒時預載模組、辨識檔並用空白畫布預熱，不呼叫相機。按下掃描後開啟後鏡頭；連續兩次比對成功發出一次 `scanSuccess`。
 
-目前所有掃描共用 `public/assets/targets/targets.mind` 的第 0 個目標，是 demo 配置。各展品獨立目標尚未加入。
+所有掃描目前共用六張可接受的目標：原有目標，以及桃喜 01、04、12、15、29。`public/assets/targets/targets.mind` 包含六張已編譯目標，原有單張檔保存在 `original.mind`，新增單張檔及 PNG 依 `taoxi-編號` 命名。
+
+合併檔的索引依序為 0：原有目標、1：桃喜 01、2：桃喜 04、3：桃喜 12、4：桃喜 15、5：桃喜 29。`src/services/scan-targets.js` 與 `public/assets/targets/manifest.json` 記錄此順序。每一輪偵測依序比對六張目標，連續兩輪辨識到同一目標才發出 `scanSuccess`；事件包含 `targetIndex`、`targetId`、`targetLabel`。目前任一目標都可完成掃描關卡，尚未限定各關只能掃描特定姿態。
 
 ## Cloudflare Pages
 

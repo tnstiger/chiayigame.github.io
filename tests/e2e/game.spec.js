@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 const engine = `export class Controller {
  constructor(options){Object.assign(this,options);this.worker={terminate(){}}}
- addImageTargetsFromBuffer(buffer){if(!buffer.byteLength)throw Error('empty');return {dimensions:[[600,969]]}}
+ addImageTargetsFromBuffer(buffer){if(!buffer.byteLength)throw Error('empty');return {dimensions:Array.from({length:6},()=>[600,969])}}
  async dummyRun(input){window.warmups=(window.warmups||0)+1;window.warmupInput=input.tagName}
- async detect(){return {featurePoints:[]}}
- async match(){return {modelViewTransform:window.recognize ? [[1]] : null}}
+ async detect(){window.detectionCount=(window.detectionCount||0)+1;return {featurePoints:[]}}
+ async match(points,index){const target=window.alternateTargets ? window.detectionCount%2 : (window.recognizeIndex??0);return {modelViewTransform:window.recognize && index===target ? [[1]] : null}}
  dispose(){}
 }`;
 async function setup(page) {
@@ -45,6 +45,64 @@ async function scan(page) {
   if (await page.getByRole("button", { name: "啟動相機辨識" }).isVisible())
     await page.getByRole("button", { name: "啟動相機辨識" }).click();
 }
+for (const [targetIndex, targetId] of [
+  "original",
+  "taoxi-01",
+  "taoxi-04",
+  "taoxi-12",
+  "taoxi-15",
+  "taoxi-29",
+].entries()) {
+  test(`recognizes ${targetId} and reports its own target index`, async ({
+    page,
+  }) => {
+    await setup(page);
+    await page.goto("/zone/food/scan/taoxi");
+    await page.evaluate(
+      ({ targetIndex }) => {
+        window.recognizeIndex = targetIndex;
+        window.scanResults = [];
+        document.addEventListener("scanSuccess", (event) =>
+          window.scanResults.push(event.detail),
+        );
+      },
+      { targetIndex },
+    );
+    await scan(page);
+    await expect(page).toHaveURL(/\/zone\/food\/question\/1$/);
+    const results = await page.evaluate(() => window.scanResults);
+    expect(results).toHaveLength(1);
+    expect(results[0]).toMatchObject({
+      source: "mindar",
+      targetIndex,
+      targetId,
+    });
+  });
+}
+test("alternating targets cannot satisfy two consecutive matches", async ({
+  page,
+}) => {
+  await setup(page);
+  await page.goto("/zone/food/scan/taoxi");
+  await page.evaluate(() => {
+    window.recognize = true;
+    window.alternateTargets = true;
+    window.scanResults = [];
+    document.addEventListener("scanSuccess", (event) =>
+      window.scanResults.push(event.detail),
+    );
+  });
+  await page.getByRole("button", { name: "啟動相機辨識" }).click();
+  await page.waitForFunction(() => window.detectionCount >= 6);
+  await expect(page).toHaveURL(/scan\/taoxi$/);
+  expect(await page.evaluate(() => window.scanResults)).toEqual([]);
+  await page.evaluate(() => {
+    window.alternateTargets = false;
+    window.recognizeIndex = 5;
+  });
+  await expect(page).toHaveURL(/\/zone\/food\/question\/1$/);
+  expect(await page.evaluate(() => window.scanResults)).toHaveLength(1);
+});
 test("preparation does not open camera; navigation and direct routes restore correctly", async ({
   page,
 }) => {
