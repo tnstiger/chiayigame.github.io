@@ -1,0 +1,38 @@
+[
+  {
+    "targetIndex": 0,
+    "id": "original",
+    "file": "original.mind",
+    "label": "原有目標"
+  },
+  {
+    "targetIndex": 1,
+    "id": "taoxi-01",
+    "file": "taoxi-01.mind",
+    "label": "桃喜 01"
+  },
+  {
+    "targetIndex": 2,
+    "id": "taoxi-04",
+    "file": "taoxi-04.mind",
+    "label": "桃喜 04"
+  },
+  {
+    "targetIndex": 3,
+    "id": "taoxi-12",
+    "file": "taoxi-12.mind",
+    "label": "桃喜 12"
+  },
+  {
+    "targetIndex": 4,
+    "id": "taoxi-15",
+    "file": "taoxi-15.mind",
+    "label": "桃喜 15"
+  },
+  {
+    "targetIndex": 5,
+    "id": "taoxi-29",
+    "file": "taoxi-29.mind",
+    "label": "桃喜 29"
+  }
+]

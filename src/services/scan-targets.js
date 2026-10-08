@@ -1,9 +1,8 @@
 // The order matches public/assets/targets/targets.mind.
 export const scanTargets = [
-  { id: "original", label: "原有目標" },
-  { id: "taoxi-01", label: "桃喜 01" },
-  { id: "taoxi-04", label: "桃喜 04" },
-  { id: "taoxi-12", label: "桃喜 12" },
-  { id: "taoxi-15", label: "桃喜 15" },
-  { id: "taoxi-29", label: "桃喜 29" },
+  { id: "taoxi-food", label: "桃喜 嘉義滋味" },
+  { id: "taoxi-daily", label: "桃喜 城中日常" },
+  { id: "taoxi-home", label: "桃喜 生活家屋" },
+  { id: "taoxi-store", label: "桃喜 老店街" },
+  { id: "taoxi-craft", label: "桃喜 百工巷" },
 ];

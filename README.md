@@ -39,9 +39,11 @@ npm run build
 
 `src/services/scanner.js` 使用 MindAR 1.2.5，從固定版本 CDN 載入；需要網路、WebGL，以及 HTTPS 或 localhost。首頁空閒時預載模組、辨識檔並用空白畫布預熱，不呼叫相機。按下掃描後開啟後鏡頭；連續兩次比對成功發出一次 `scanSuccess`。
 
-所有掃描目前共用六張可接受的目標：原有目標，以及桃喜 01、04、12、15、29。`public/assets/targets/targets.mind` 包含六張已編譯目標，原有單張檔保存在 `original.mind`，新增單張檔及 PNG 依 `taoxi-編號` 命名。
+所有掃描目前只接受五張新版桃喜圖片：嘉義滋味、城中日常、生活家屋、老店街、百工巷。`public/assets/targets/targets.mind` 包含五張已編譯目標，獨立 `.mind` 與 PNG 依 `taoxi-展區代號` 命名。舊六目標與素材保留於 `archive/six-targets/`，不再載入辨識。
 
-合併檔的索引依序為 0：原有目標、1：桃喜 01、2：桃喜 04、3：桃喜 12、4：桃喜 15、5：桃喜 29。`src/services/scan-targets.js` 與 `public/assets/targets/manifest.json` 記錄此順序。每一輪偵測依序比對六張目標，連續兩輪辨識到同一目標才發出 `scanSuccess`；事件包含 `targetIndex`、`targetId`、`targetLabel`。目前任一目標都可完成掃描關卡，尚未限定各關只能掃描特定姿態。
+合併檔的索引依序為 0：嘉義滋味（food）、1：城中日常（daily）、2：生活家屋（home）、3：老店街（store）、4：百工巷（craft）。`src/services/scan-targets.js` 與 `public/assets/targets/manifest.json` 記錄此順序。每一輪偵測依序比對五張目標，連續兩輪辨識到同一目標才發出 `scanSuccess`；事件包含 `targetIndex`、`targetId`、`targetLabel`。目前任一新目標都可完成掃描關卡，尚未限定各關只能掃描同名展區圖片。
+
+編譯用圖裁掉透明留白、鋪白底，等比例調整至最長邊 1024 px，保持原始角色造型。Compiler 的 Scale 分頁只影響預覽，下載的 `.mind` 包含全部尺度。五張的相機辨識效果仍需以實際展示方式進行手機驗收。
 
 ## Cloudflare Pages
 

@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 const engine = `export class Controller {
  constructor(options){Object.assign(this,options);this.worker={terminate(){}}}
- addImageTargetsFromBuffer(buffer){if(!buffer.byteLength)throw Error('empty');return {dimensions:Array.from({length:6},()=>[600,969])}}
+ addImageTargetsFromBuffer(buffer){if(!buffer.byteLength)throw Error('empty');return {dimensions:Array.from({length:5},()=>[600,969])}}
  async dummyRun(input){window.warmups=(window.warmups||0)+1;window.warmupInput=input.tagName}
  async detect(){window.detectionCount=(window.detectionCount||0)+1;return {featurePoints:[]}}
  async match(points,index){const target=window.alternateTargets ? window.detectionCount%2 : (window.recognizeIndex??0);return {modelViewTransform:window.recognize && index===target ? [[1]] : null}}
@@ -46,12 +46,11 @@ async function scan(page) {
     await page.getByRole("button", { name: "啟動相機辨識" }).click();
 }
 for (const [targetIndex, targetId] of [
-  "original",
-  "taoxi-01",
-  "taoxi-04",
-  "taoxi-12",
-  "taoxi-15",
-  "taoxi-29",
+  "taoxi-food",
+  "taoxi-daily",
+  "taoxi-home",
+  "taoxi-store",
+  "taoxi-craft",
 ].entries()) {
   test(`recognizes ${targetId} and reports its own target index`, async ({
     page,
@@ -98,10 +97,27 @@ test("alternating targets cannot satisfy two consecutive matches", async ({
   expect(await page.evaluate(() => window.scanResults)).toEqual([]);
   await page.evaluate(() => {
     window.alternateTargets = false;
-    window.recognizeIndex = 5;
+    window.recognizeIndex = 4;
   });
   await expect(page).toHaveURL(/\/zone\/food\/question\/1$/);
   expect(await page.evaluate(() => window.scanResults)).toHaveLength(1);
+});
+test("indices outside the five active targets do not complete a scan", async ({
+  page,
+}) => {
+  await setup(page);
+  await page.goto("/zone/food/scan/taoxi");
+  await page.evaluate(() => {
+    window.recognizeIndex = 5;
+  });
+  await scan(page);
+  await page.waitForFunction(() => window.detectionCount >= 6);
+  await expect(page).toHaveURL(/scan\/taoxi$/);
+  await expect(page.locator(".scanTopHint")).not.toHaveText("掃描成功！");
+  await page.evaluate(() => {
+    window.recognizeIndex = 0;
+  });
+  await expect(page).toHaveURL(/\/zone\/food\/question\/1$/);
 });
 test("preparation does not open camera; navigation and direct routes restore correctly", async ({
   page,
