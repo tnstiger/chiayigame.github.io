@@ -68,7 +68,7 @@ for (const [targetIndex, targetId] of [
       { targetIndex },
     );
     await scan(page);
-    await expect(page).toHaveURL(/\/zone\/food\/question\/1$/);
+    await expect(page).toHaveURL(/\/zone\/food\/scene$/);
     const results = await page.evaluate(() => window.scanResults);
     expect(results).toHaveLength(1);
     expect(results[0]).toMatchObject({
@@ -99,7 +99,7 @@ test("alternating targets cannot satisfy two consecutive matches", async ({
     window.alternateTargets = false;
     window.recognizeIndex = 4;
   });
-  await expect(page).toHaveURL(/\/zone\/food\/question\/1$/);
+  await expect(page).toHaveURL(/\/zone\/food\/scene$/);
   expect(await page.evaluate(() => window.scanResults)).toHaveLength(1);
 });
 test("indices outside the five active targets do not complete a scan", async ({
@@ -117,7 +117,7 @@ test("indices outside the five active targets do not complete a scan", async ({
   await page.evaluate(() => {
     window.recognizeIndex = 0;
   });
-  await expect(page).toHaveURL(/\/zone\/food\/question\/1$/);
+  await expect(page).toHaveURL(/\/zone\/food\/scene$/);
 });
 test("preparation does not open camera; navigation and direct routes restore correctly", async ({
   page,
@@ -132,13 +132,30 @@ test("preparation does not open camera; navigation and direct routes restore cor
     })),
   ).toEqual({ calls: 0, input: "CANVAS" });
   await page.getByRole("link", { name: "開始任務" }).click();
+  await expect(page).toHaveURL(/\/select$/);
+  await expect(page.getByRole("button", { name: "開始冒險！" })).toBeDisabled();
+  await page.getByRole("radio", { name: "女生小幫手" }).click();
+  await page.getByRole("button", { name: "開始冒險！" }).click();
+  await expect(page).toHaveURL(/\/intro$/);
   await page.getByRole("button", { name: "下一句" }).click();
   await expect(page).toHaveURL(/line=2/);
   await page.goBack();
+  await expect(page.locator(".dialogueStep")).toHaveText("1 / 15");
+  await page.goto("/intro?line=11");
+  await expect(page.locator(".portraitWrap img")).toHaveAttribute(
+    "src",
+    /player-girl\.png$/,
+  );
+  await page.goto("/intro?line=15");
+  await page.getByRole("button", { name: "進入遊戲教學" }).click();
+  await expect(page).toHaveURL(/\/tutorial$/);
   await expect(page.locator(".dialogueStep")).toHaveText("1 / 6");
-  await page.goto("/zone/food/intro?line=3");
+  await page.goto("/tutorial?line=6");
+  await page.getByRole("button", { name: "開始追蹤！" }).click();
+  await expect(page).toHaveURL(/\/map$/);
+  await page.goto("/zone/food/intro?line=5");
   await page.reload();
-  await expect(page.locator(".dialogueStep")).toHaveText("3 / 3");
+  await expect(page.locator(".dialogueStep")).toHaveText("5 / 5");
   await page.getByRole("button", { name: "開始追蹤桃喜" }).click();
   await expect(page).toHaveURL(/\/zone\/food\/clue$/);
   await page.goto("/zone/food/question/2");
@@ -180,6 +197,32 @@ test("camera starts on request, wrong image stays scanning, exit cancels success
   await page.getByRole("button", { name: "開始尋找桃喜" }).click();
   await expect(page.locator(".scanTopHint")).toContainText("相機權限未開啟");
 });
+test("test skip button passes a scan without the camera", async ({ page }) => {
+  await setup(page);
+  await page.goto("/zone/food/scan/taoxi");
+  await page.getByRole("button", { name: "測試：略過掃描" }).click();
+  await expect(page).toHaveURL(/\/zone\/food\/scene$/);
+  expect(await page.evaluate(() => window.cameraCalls)).toBe(0);
+  await page.goto("/zone/food/question/1");
+  await page.locator(".opt").first().click();
+  await expect(page).toHaveURL(/\/zone\/food\/scene\/1$/);
+  await page.goto("/zone/food/scene/1?line=5");
+  await page.getByRole("button", { name: "前往謎題挑戰" }).click();
+  await page.getByRole("button", { name: "開始 AR 掃描" }).click();
+  await page.getByRole("button", { name: "測試：略過掃描" }).click();
+  await expect(page).toHaveURL(/\/zone\/food\/stamp$/);
+});
+test("home clue page plays and pauses the melody", async ({ page }) => {
+  await setup(page);
+  await page.goto("/zone/home/clue");
+  await expect(page.locator(".clueTitle")).toHaveText("任務一｜找出桃喜");
+  await page.getByRole("button", { name: "▶ 播放旋律" }).click();
+  await expect(page.getByRole("button", { name: "⏸ 暫停旋律" })).toBeVisible();
+  await page.getByRole("button", { name: "⏸ 暫停旋律" }).click();
+  await expect(page.getByRole("button", { name: "▶ 播放旋律" })).toBeVisible();
+  await page.goto("/zone/food/clue");
+  await expect(page.getByRole("button", { name: /旋律/ })).toHaveCount(0);
+});
 test("five zone journeys award stamps once and unlock stories and rewards", async ({
   page,
 }) => {
@@ -191,38 +234,97 @@ test("five zone journeys award stamps once and unlock stories and rewards", asyn
     await page.goto(`/zone/${id}/clue`);
     await page.getByRole("button", { name: "開始尋找桃喜" }).click();
     await scan(page);
+    await expect(page).toHaveURL(new RegExp(`/zone/${id}/scene$`));
+    await page.goto(`/zone/${id}/scene?line=18`);
+    await page.getByRole("button", { name: "前往謎題挑戰" }).click();
     await expect(page).toHaveURL(new RegExp(`/zone/${id}/question/1$`));
     if (id === "craft") {
       await page.getByRole("textbox").fill("澳洲新山");
       await page.getByRole("button", { name: "送出" }).click();
     } else if (id === "store") {
-      await page.getByRole("button", { name: "開始 AR 掃描" }).click();
-      await scan(page);
+      await page.getByRole("button", { name: "測試：模擬搖動" }).click();
+      await expect(page.getByText("顯現進度 25%")).toBeVisible();
+      for (let i = 0; i < 3; i++)
+        await page.getByRole("button", { name: "測試：模擬搖動" }).click();
+      await expect(page.locator(".feedback")).toContainText("照片顯現了");
+      await page.getByRole("button", { name: "繼續" }).click();
+    } else if (id === "home") {
+      await page.getByRole("textbox", { name: "陸軍" }).fill("復國新村");
+      await page.getByRole("textbox", { name: "空軍" }).fill("建國二村");
+      await page.getByRole("button", { name: "送出" }).click();
+      await expect(page.locator(".feedback")).toContainText("再觀察一下");
+      await page.getByRole("textbox", { name: "陸軍" }).fill("建國二村");
+      await page.getByRole("textbox", { name: "空軍" }).fill("復國新村");
+      await page.getByRole("button", { name: "送出" }).click();
     } else {
       await page.locator(".opt").first().click();
     }
+    await expect(page).toHaveURL(new RegExp(`/zone/${id}/scene/1$`));
+    await page.goto(`/zone/${id}/scene/1?line=18`);
+    await page.getByRole("button", { name: "前往謎題挑戰" }).click();
     await expect(page).toHaveURL(new RegExp(`/zone/${id}/question/2$`));
     await page.reload();
     await expect(page).toHaveURL(new RegExp(`/zone/${id}/question/2$`));
     if (id === "daily") {
       await page.getByRole("textbox").fill("英安堂");
       await page.getByRole("button", { name: "送出" }).click();
+    } else if (id === "home") {
+      await page.getByRole("textbox", { name: "國家為" }).fill("越南");
+      await page.getByRole("button", { name: "送出" }).click();
+      await expect(page.locator(".feedback")).toContainText("再觀察一下");
+      await page.getByRole("textbox", { name: "國家為" }).fill("中國大陸");
+      await page.getByRole("button", { name: "送出" }).click();
     } else if (id === "store") {
-      for (const part of ["屋頂", "窗框", "門面", "招牌"]) {
-        await page
-          .getByRole("button", { name: part + "零件", exact: true })
-          .click();
-        await page.getByRole("button", { name: part, exact: true }).click();
+      // The page scrolls when pieces are clicked, so measure the board each time.
+      const at = async (x, y) => {
+        const board = await page.locator(".assembleStage").boundingBox();
+        return [
+          board.x + (board.width * x) / 620,
+          board.y + (board.height * y) / 500,
+        ];
+      };
+      // A piece dropped in the wrong spot stays in the tray.
+      await page.getByRole("button", { name: "屋頂零件" }).click();
+      await page.mouse.click(...(await at(30, 480)));
+      await expect(page.locator(".feedback")).toContainText("位置不對");
+      await page.mouse.click(...(await at(313, 126)));
+      await expect(page.locator(".feedback")).toContainText("屋頂已固定");
+      // Dragging works as well as tap-to-place.
+      const front = await page
+        .getByRole("button", { name: "正面牆零件" })
+        .boundingBox();
+      await page.mouse.move(front.x + front.width / 2, front.y + 20);
+      await page.mouse.down();
+      await page.mouse.move(...(await at(245, 306)), { steps: 8 });
+      await page.mouse.up();
+      await expect(page.getByRole("button", { name: "正面牆零件" })).toHaveCount(
+        0,
+      );
+      for (const [label, x, y] of [
+        ["右側牆", 448, 283],
+        ["左側牆", 160, 245],
+      ]) {
+        await page.getByRole("button", { name: label + "零件" }).click();
+        await page.mouse.click(...(await at(x, y)));
       }
+      await expect(page.locator(".feedback")).toContainText("拼圖完成");
+      await page.getByRole("button", { name: "繼續" }).click();
     } else {
       await page.getByRole("button", { name: "開始 AR 掃描" }).click();
       await scan(page);
     }
     await expect(page).toHaveURL(new RegExp(`/zone/${id}/stamp$`));
   }
-  await expect(page).toHaveURL(/\/reward$/);
-  await page.getByRole("link", { name: "← 回集點頁" }).click();
+  await page.waitForTimeout(1500);
+  await expect(page).toHaveURL(/\/zone\/craft\/stamp$/);
+  await page.getByRole("link", { name: "集點" }).click();
+  await expect(page).toHaveURL(/\/points$/);
   await expect(page.locator(".pointCount")).toContainText("5");
+  await page.goto("/map");
+  await expect(page.locator(".completeNote")).toContainText(
+    "（已完成集點，請至集點頁面查看）",
+  );
+  await expect(page.locator(".zoneList")).toHaveCount(0);
   await page.goto("/stories/food");
   await expect(page.locator(".bookPage h3")).toHaveText("嘉義涼麵的美味魔法！");
   expect(errors).toEqual([]);

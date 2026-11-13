@@ -1,4 +1,4 @@
-import { zones, order, storyById } from "./data/game.js";
+import { zones, order, storyById, cutsceneScripts } from "./data/game.js";
 export const storageKey = "taocityDemoStateV2";
 export function normalizeProgress(value) {
   const done = {},
@@ -16,11 +16,25 @@ export function normalizeProgress(value) {
   }
   return { done, journey };
 }
+export function nextPath(id, done) {
+  if (done > 0 && done === zones[id].questions.length) return `/zone/${id}/stamp`;
+  if (cutsceneScripts[id]?.[done])
+    return done === 0 ? `/zone/${id}/scene` : `/zone/${id}/scene/${done}`;
+  return `/zone/${id}/question/${done + 1}`;
+}
 export function routeFallback(to, progress) {
+  if (["intro", "tutorial"].includes(to.name) && !progress.player)
+    return "/select";
   const id = to.params.zone,
     number = Number(to.params.number);
   const intro = id && zones[id] ? `/zone/${id}/intro` : "/map";
   if (id && !zones[id]) return "/map";
+  if (to.name === "cutscene") {
+    const step = Number(to.params.step ?? 0);
+    if (!Number.isInteger(step) || step < 0 || !cutsceneScripts[id]?.[step])
+      return `/zone/${id}/question/${Number.isInteger(step) && step >= 0 ? step + 1 : 1}`;
+    if ((progress.journey[id] || 0) < step + 1) return `/zone/${id}/clue`;
+  }
   if (
     to.name === "question" ||
     (to.name === "scan" && to.params.mode === "object")

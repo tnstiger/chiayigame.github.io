@@ -1,5 +1,5 @@
 <script setup>
-import { order } from "../data/game.js";
+import { order, zones } from "../data/game.js";
 import { game } from "../store.js";
 </script>
 <template>
@@ -9,8 +9,11 @@ import { game } from "../store.js";
       :key="id"
       class="dot"
       :class="{ done: game.done[id] }"
+      role="img"
+      :aria-label="`${zones[id].name}${game.done[id] ? '已完成' : '未完成'}`"
     >
-      {{ game.done[id] ? "✓" : "" }}
+      <img :src="`/${zones[id].mapIcon}`" alt="" />
+      <span v-if="game.done[id]" aria-hidden="true">✓</span>
     </div>
   </div>
 </template>

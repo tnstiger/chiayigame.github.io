@@ -1,33 +1,47 @@
 <script setup>
-import { portraitImages, asset } from "../data/game.js";
-defineProps({ item: Object, step: Number, total: Number, hint: String });
+import { computed } from "vue";
+import { portraitImages, players, asset } from "../data/game.js";
+import { game } from "../store.js";
+const props = defineProps({
+  item: Object,
+  step: Number,
+  total: Number,
+  hint: String,
+});
 defineEmits(["previous", "next", "finish"]);
+const isPlayer = computed(
+  () => props.item.role === "player" || props.item.speaker === "MoMo醬",
+);
+const isNarrator = computed(() => props.item.role === "narrator");
+const speakerName = computed(() =>
+  props.item.speaker === "MoMo醬" ? "小幫手" : props.item.speaker,
+);
+const portrait = computed(() => {
+  if (isPlayer.value && game.player) return players[game.player].image;
+  return portraitImages[props.item.speaker] || portraitImages["小嘉博"];
+});
 </script>
 <template>
   <div class="dialogueStage">
-    <div class="portraitWrap">
+    <div v-if="!isNarrator" class="portraitWrap">
       <div>
         <img
-          :src="asset(portraitImages[item.speaker] || portraitImages['小嘉博'])"
-          :alt="item.speaker + '立繪'"
+          :src="asset(portrait)"
+          :alt="speakerName + '立繪'"
+          :class="{ playerPortrait: isPlayer && game.player }"
         />
-        <div class="miniPortraitName">{{ item.speaker }}</div>
+        <div class="miniPortraitName">{{ speakerName }}</div>
       </div>
     </div>
     <div class="dialogueBox">
       <div class="dialogueHeader">
-        <div
-          class="speakerTag"
-          :class="{
-            player: item.role === 'player' || item.speaker === 'MoMo醬',
-          }"
-        >
-          {{ item.speaker }}
+        <div class="speakerTag" :class="{ player: isPlayer }">
+          {{ speakerName }}
         </div>
         <div class="dialogueStep">{{ step + 1 }} / {{ total }}</div>
       </div>
       <div class="dialogueText">{{ item.text }}</div>
-      <div class="dialogueHint">{{ hint }}</div>
+      <div v-if="hint" class="dialogueHint">{{ hint }}</div>
       <div class="dialogueControls">
         <button
           class="secondary"

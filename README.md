@@ -2,6 +2,30 @@
 
 Vue 3 + Vite + Vue Router 的手機實境遊戲。以案主 0930 版本的內容為基礎，保留開場與五區前導故事、題目、手帳、集點與獎勵。
 
+## 本次更新內容
+
+- **開場流程**：新增男生／女生小幫手角色選擇、〈開頭｜桃喜大混亂〉開場故事，以及〈遊戲教學｜桃喜追蹤器〉任務說明。
+- **五區主線與關卡**
+  - **嘉義滋味**：更新桃喜線索與涼麵題目，延伸至豆漿豆花掃描任務。
+  - **城中日常**：更新中藥窟與老鷹線索，加入相應過場故事。
+  - **生活家屋**：加入大同寶寶旋律線索、軍徽雙欄輸入題，以及新住民人數線索題。
+  - **老店街**：加入桃喜追蹤器搖動顯影，以及以老屋結構圖和零件完成的拖曳／點選拼圖。
+  - **百工巷**：加入製香詩句線索、材料名稱題，以及管樂小雞圖片掃描任務。
+- **故事內容**：更新五區前導與關卡過場；整理五篇《百味手帳》支線故事及五篇小嘉博豆知識，包括〈光陰的故事〉、〈巷口的童年滋味〉與〈來自信仰的香味〉等。
+- **遊戲互動**：支援選擇題、文字與多欄文字答案、AR 掃描、搖動手機顯影，以及可拖曳或點選放置的老屋拼圖；完成主線後解鎖對應手帳故事與集章。
+- **地圖與集點介面**：更新五區地圖圖示、進度章與集章圖案，加入 5/5 完成提示，並更新首頁、地圖、手帳、集點導覽圖示。
+- **手帳圖示與素材**：為五篇主線手帳及五篇豆知識加入專屬圖示；新增角色頭像、軍徽、老屋拼圖零件、圖片線索與大同歌曲音檔。
+- **版本同步與測試**：Vue 新版與根目錄 `demo.html` 同步更新；補充關卡流程與互動測試。
+
+## 協作夥伴待辦：第 3 小關 AR 掃描圖
+
+以下兩關的實際 AR 辨識目標尚待協作夥伴更新。本次提交提供參考圖，但不修改 MindAR 辨識資料或掃描流程；這些參考圖目前尚未編入 `targets.mind`：
+
+- **嘉義滋味｜第 3 小關（豆漿豆花）**：原圖 `assets/img/嘉義滋味第3小關AR掃描.jpg`，參考副本 `public/assets/targets/food-douhua-level3.jpg`。
+- **百工巷｜第 3 小關（管樂小雞刺繡）**：原圖 `assets/img/百工巷第3小關AR掃描.jpg`，參考副本 `public/assets/targets/craft-wind-chicken-level3.jpg`。
+
+請協作夥伴將兩張參考圖加入為第 3 小關的辨識目標（不要覆蓋五張展區桃喜目標），設定各關只接受正確目標，重新編譯 `public/assets/targets/targets.mind`，並同步維護個別目標檔、`public/assets/targets/manifest.json` 和 `src/services/scan-targets.js`。完成後請驗證這兩關及原有五區尋找桃喜的掃描流程。
+
 ## 開發與驗證
 
 Node.js 22.12 以上：
@@ -19,7 +43,10 @@ npm run build
 ## 內容維護
 
 - `src/data/zones.json`：各區線索、題目、答案、解鎖故事。
-- `src/data/dialogueScript.json`：開場對話。
+- `src/data/cutsceneScripts.json`：五區關卡過場對話，依「已完成步驟」編號（`0` 為掃描到桃喜後、`1` 為第 1 題答對後）；路由為 `/zone/:zone/scene/:step?`，`nextPath()`（`src/progress.js`）決定下一步。`zones.json` 的 `mission` 為線索頁「任務一｜找出桃喜」文字。沒有設定過場的步驟直接進入下一題。
+- `src/data/tutorialScript.json`：開場故事後的「遊戲教學｜桃喜追蹤器」，結束後進入地圖。
+- `src/data/dialogueScript.json`：開場故事「開頭｜桃喜大混亂」（`role` 為 `narrator` 時不顯示立繪，`player` 顯示玩家所選角色頭像）。
+- `src/data/game.js` 的 `players`：可選角色（男生／女生小幫手）及頭像 `public/assets/img/player-*.png`（由 `assets/img/男角.png`、`女角.png` 裁切縮小）；選擇結果存於 `localStorage` 的 `taocityPlayerV1`。
 - `src/data/preludeScripts.json`：各區前導對話。
 - `src/data/extraStories.json`：一開始即可閱讀的豆知識。
 - `src/data/portraitImages.json`：角色立繪對應。

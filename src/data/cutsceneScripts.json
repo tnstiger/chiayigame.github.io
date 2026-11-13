@@ -1,0 +1,487 @@
+{
+  "food": {
+    "0": [
+    {
+      "speaker": "小幫手",
+      "role": "player",
+      "text": "白色醬汁……會藏在哪裡呢？"
+    },
+    {
+      "speaker": "旁白",
+      "role": "narrator",
+      "text": "我循著線索仔細尋找，終於在展區的一個角落發現桃喜。"
+    },
+    {
+      "speaker": "小幫手",
+      "role": "player",
+      "text": "找到了！"
+    },
+    {
+      "speaker": "旁白",
+      "role": "narrator",
+      "text": "原來，桃喜正躲在一旁，忙著調配一瓶神祕的白色醬汁。"
+    },
+    {
+      "speaker": "小幫手",
+      "role": "player",
+      "text": "桃喜，你在做什麼？"
+    },
+    {
+      "speaker": "桃喜",
+      "role": "npc",
+      "text": "哼！沒想到這麼快就被你找到了。"
+    },
+    {
+      "speaker": "桃喜",
+      "role": "npc",
+      "text": "我要調出全世界最厲害的白醋！這可是我的嘉義魂！"
+    },
+    {
+      "speaker": "旁白",
+      "role": "narrator",
+      "text": "桃喜抱起神祕醬汁，得意地笑了起來。"
+    }
+    ],
+    "1": [
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "什麼！你居然這麼快就解開了！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜氣得跺了跺腳。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "哼！沒關係，我早就把珍貴的【百味手帳】藏起來了。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "你一定猜不到寶箱藏在哪裡！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "話才說完，桃喜便一溜煙地消失了。"
+      }
+    ]
+  },
+  "daily": {
+    "0": [
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "經過一番尋找，我終於在中藥舖裡發現了桃喜的身影。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜躲在角落，臉上還掛著得意的笑容。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "嘿嘿……你們終於找到我了。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "桃喜！快告訴我，你把【百味手帳】藏到哪裡去了？"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜眨了眨眼睛，露出神祕的表情。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "想要找到【百味手帳】嗎？"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "那就先解開我留下的謎題吧！"
+      }
+    ],
+    "1": [
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "我知道了！這裡就是『中藥窟』！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜驚訝地瞪大眼睛。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "你怎麼會知道？"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "難道……是小嘉博偷偷告訴你的？"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜氣得直跺腳。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "可惡！又被你解開了！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "過了一會兒，桃喜突然露出神祕的笑容。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "既然你這麼厲害，我就告訴你手帳的去處。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "我已經把手帳交給一位神祕人物了。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "神祕人物？是誰？"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "想知道的話，就自己去問小嘉博吧！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "話才說完——\n\n咻！\n\n桃喜轉身就跑，一下子便消失在人群之中。"
+      }
+    ]
+  },
+  "home": {
+    "0": [
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我仔細聆聽旋律，循著聲音在家屋裡四處尋找。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "啊！我找到了！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "原來，桃喜正躲在電視旁的大同寶寶身邊。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "桃喜！原來你躲在這裡。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "糟糕！被發現了！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜一看到我，立刻轉身逃跑。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "桃喜，站住！別跑！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我連忙追了上去，眼前卻出現一處重現眷村生活的場景。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "咦？這裡是……眷村嗎？"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我還來不及仔細查看，桃喜便趁機溜走，消失得無影無蹤。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "糟糕，又跟丟桃喜了……"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "別擔心，快看看追蹤器裡有沒有留下新的線索。"
+      }
+    ],
+    "1": [
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "我知道了！這兩個軍徽，分別代表『建國二村』和『復國新村』。"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "原來如此！"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "所以，桃喜很可能把【百味手帳】藏在這兩座眷村的線索裡。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我趕緊將找到的答案輸入桃喜追蹤器。\n\n557450……366714……190736......"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "沒想到，追蹤器裡竟然傳出好幾個數字。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "咦？這些數字是什麼？"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "等等！追蹤器要我們從數字找到人數第一是誰。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "小嘉博張開眼睛，在展場尋找數字的來源。"
+      }
+    ]
+  },
+  "store": {
+    "0": [
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我和小嘉博趕緊循著線索，來到老店街的糖果店。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜正躲在糖果堆裡，嘴巴塞得鼓鼓的，大口吃著各式各樣的零食。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "糖果、餅乾、零嘴……桃喜吃得肚子圓滾滾，連動作都變得慢吞吞。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "桃喜！原來你躲在這裡偷吃零食！"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "嘿嘿……因為實在太好吃了嘛！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "看到我們追了上來，桃喜趕緊張開翅膀，準備逃跑。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "可是，因為吃得太飽，桃喜怎麼飛都飛不快，只能慢吞吞地往前移動。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "這次不會再讓你溜走了！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我趕緊追上前，伸手想攔住桃喜。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "沒想到——\n\n砰！\n\n一個不小心，我撞上了旁邊的老屋模型。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "啊！糟糕！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "老屋模型被撞得東倒西歪，零件散落一地。"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "不好了！老屋模型倒下來了！"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "我們要把老屋復原才行，試試看桃喜追蹤器的『相機輔助功能』吧！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我趕緊拿起追蹤器，對著散落的老屋模型查看。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "追蹤器突然發出一聲快門聲，螢幕上竟然出現一張黑漆漆的底片。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "咦？這張照片怎麼什麼都看不到？"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "試著把底片刷一刷，應該就會出現老屋原本的模樣了。"
+      }
+    ],
+    "1": [
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我拿起桃喜追蹤器，畫面中出現老屋的木構架，以及散落在四周的屋頂和牆面。"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "老屋就像一座立體拼圖。屋頂、牆面和門窗，都有各自的位置。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "好！先把老屋修好，再繼續追桃喜！"
+      }
+    ]
+  },
+  "craft": {
+    "0": [
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "我反覆讀著追蹤器上出現的詩句。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "香粉……指尖……一揉、一搓……"
+      },
+      {
+        "speaker": "小嘉博",
+        "role": "npc",
+        "text": "這些線索好像都和一種傳統工藝有關。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "循著詩句的提示，我們來到百工巷的製香舖，果然發現桃喜躲在裡面。"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜不只藏在這裡，還把製香師傅的材料弄得亂七八糟！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "香粉、香料和工具散落一地，整間製香舖被弄得一團亂。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "嘿嘿，這些東西看起來好有趣！"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "桃喜！原來是你把這裡弄亂了！"
+      }
+    ],
+    "1": [
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜看到自己的惡作劇被發現，只好吐了吐舌頭。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "哼！還是被你發現了。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "桃喜，快告訴我！【百味手帳】到底藏在哪裡？"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜眼珠一轉，露出神祕的笑容。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "好啦、好啦，我可以告訴你。"
+      },
+      {
+        "speaker": "小幫手",
+        "role": "player",
+        "text": "真的嗎？"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "不過……我只給你一點點線索！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "桃喜神祕兮兮地拿出一張圖片。"
+      },
+      {
+        "speaker": "桃喜",
+        "role": "npc",
+        "text": "想找到手帳，就自己想辦法解開圖片裡的祕密吧！"
+      },
+      {
+        "speaker": "旁白",
+        "role": "narrator",
+        "text": "話才說完，桃喜又一溜煙地跑掉了。"
+      }
+    ]
+  }
+}

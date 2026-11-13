@@ -1,17 +1,33 @@
 import { reactive, computed } from "vue";
-import { zones, order } from "./data/game.js";
+import { zones, order, players } from "./data/game.js";
 import { normalizeProgress, storageKey } from "./progress.js";
-let initial;
+const playerKey = "taocityPlayerV1";
+let initial, savedPlayer;
 try {
   initial = JSON.parse(localStorage.getItem(storageKey) || "{}");
 } catch {
   initial = {};
 }
+try {
+  savedPlayer = localStorage.getItem(playerKey);
+} catch {
+  savedPlayer = null;
+}
 export const game = reactive({
   ...normalizeProgress(initial),
+  player: Object.hasOwn(players, savedPlayer) ? savedPlayer : null,
   pendingCameraStart: null,
   toast: "",
 });
+export function setPlayer(id) {
+  if (!Object.hasOwn(players, id)) return;
+  game.player = id;
+  try {
+    localStorage.setItem(playerKey, id);
+  } catch {
+    notify("此瀏覽器無法儲存角色，本次遊戲仍可繼續。");
+  }
+}
 export const doneCount = computed(
   () => order.filter((id) => game.done[id]).length,
 );

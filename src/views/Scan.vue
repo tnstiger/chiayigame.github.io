@@ -1,23 +1,20 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { zones, asset } from "../data/game.js";
+import { asset } from "../data/game.js";
 import { game, foundTaoxi, finishQuestion, notify } from "../store.js";
+import { nextPath } from "../progress.js";
 import { scanner } from "../services/scanner.js";
 import TopBar from "../components/TopBar.vue";
 const route = useRoute(),
   router = useRouter(),
-  id = route.params.zone,
-  zone = zones[id];
+  id = route.params.zone;
 const number = Number(route.params.number),
   isTaoxi = route.params.mode === "taoxi";
 const video = ref(null),
   message = ref("準備好後，按下「啟動相機辨識」。"),
   canStart = ref(true),
   found = ref(false);
-const photo = asset(
-  isTaoxi ? zone.photo : zone.questions[number - 1].scanPhoto,
-);
 let timer,
   alive = true,
   running = false;
@@ -32,10 +29,9 @@ async function start() {
     if (error) running = false;
   });
 }
-function success(event) {
-  if (!alive || found.value || !running || event.detail?.source !== "mindar")
-    return;
+function complete() {
   found.value = true;
+  canStart.value = false;
   scanner.stop();
   message.value = "掃描成功！";
   notify("掃描成功！已辨識到目標圖片");
@@ -44,14 +40,20 @@ function success(event) {
     if (!alive) return;
     if (isTaoxi) {
       foundTaoxi(id);
-      router.replace(`/zone/${id}/question/1`);
+      router.replace(nextPath(id, 0));
     } else if (finishQuestion(id, number))
-      router.replace(
-        number === zone.questions.length
-          ? `/zone/${id}/stamp`
-          : `/zone/${id}/question/${number + 1}`,
-      );
+      router.replace(nextPath(id, number));
   }, 700);
+}
+function success(event) {
+  if (!alive || found.value || !running || event.detail?.source !== "mindar")
+    return;
+  complete();
+}
+// Test shortcut: treat the scan as successful without the camera.
+function skip() {
+  if (!alive || found.value) return;
+  complete();
 }
 onMounted(() => {
   if (game.pendingCameraStart === route.path) {
@@ -82,7 +84,6 @@ onBeforeUnmount(() => {
         class="hidden"
         @scanSuccess="success"
       ></video>
-      <div class="scanBg" :style="{ backgroundImage: `url(${photo})` }"></div>
       <div class="scanOverlay">
         <div class="scanTopHint" role="status">{{ message }}</div>
         <div class="scanFrame"></div>
@@ -92,14 +93,11 @@ onBeforeUnmount(() => {
           class="arTaoxi"
           alt="桃喜 AR"
         /><button v-if="canStart" class="scanBtn" @click="start">
-          啟動相機辨識
+          啟動相機辨識</button
+        ><button v-if="!found" class="scanBtn testSkip" @click="skip">
+          測試：略過掃描
         </button>
       </div>
-    </div>
-    <div class="demoNote">
-      將鏡頭對準目標圖片，辨識成功後會自動過關。請保持圖片完整、光線充足。此
-      Demo
-      僅辨識嘉義滋味、城中日常、生活家屋、老店街、百工巷的五張新版桃喜圖片。
     </div>
   </section>
 </template>
