@@ -13,26 +13,61 @@
 *{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:#eadac6;}
 body{background:radial-gradient(circle at 20% 10%,#fff6e8 0 18%,transparent 19%),linear-gradient(135deg,#eadac6,#f9efe2 45%,#d9bf9e);}
 button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:none!important}.app{width:min(430px,100vw);min-height:100svh;margin:0 auto;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 24px 80px rgba(0,0,0,.25)}
-.app::before{content:"";position:absolute;inset:0;background-image:linear-gradient(transparent 23px,rgba(155,102,62,.06) 24px),radial-gradient(rgba(124,75,30,.08) 1px,transparent 1px);background-size:100% 24px,16px 16px;opacity:.55;pointer-events:none}.screen{position:absolute;inset:0;padding:24px 20px 92px;overflow:auto;opacity:0;transform:translateX(24px);transition:.28s ease;pointer-events:none}.screen.active{opacity:1;transform:none;pointer-events:auto}.safeBottom{height:16px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;position:relative;z-index:2}.backBtn,.ghostBtn{background:#fffdf8;border:1px solid var(--line);border-radius:999px;padding:10px 13px;color:var(--muted);box-shadow:0 4px 12px rgba(0,0,0,.04)}.tiny{font-size:12px;color:var(--muted)}.title{font-size:34px;line-height:1.12;margin:12px 0 8px;font-weight:900;letter-spacing:.02em}.title .pink{color:var(--red)}.subtitle{font-size:16px;color:var(--muted);line-height:1.7}.card{background:rgba(255,253,248,.9);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;position:relative;z-index:1}.primary{background:linear-gradient(180deg,#f47d85,#e75b66);color:white;border-radius:999px;padding:15px 22px;font-weight:900;box-shadow:0 10px 22px rgba(231,91,102,.28);width:100%}.secondary{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:13px 18px;font-weight:800;width:100%}.dangerLink{color:#b7584f;text-decoration:underline;background:transparent;padding:4px}.logo{width:160px;display:block;margin:12px auto 8px}.heroTaoxi{width:150px;display:block;margin:16px auto -4px;filter:drop-shadow(0 16px 18px rgba(120,67,47,.22))}.bookTabs{display:flex;gap:8px;justify-content:center;margin:18px 0}.dot{width:30px;height:30px;border:2px dashed #d8c4ad;border-radius:50%;display:grid;place-items:center;background:#fff7e9;color:transparent}.dot.done{border-style:solid;color:white;background:#ed6d77;font-size:16px;font-weight:900}.storyText{line-height:1.85;font-size:16px}.storyText strong{color:#cc4a54}.mapPanel{height:460px;border-radius:24px;border:1px solid var(--line);background:#fbecd8;position:relative;overflow:hidden;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}.mapPanel:before{content:"";position:absolute;inset:30px 44px;background:repeating-linear-gradient(90deg,rgba(121,94,67,.12) 0 6px,transparent 6px 54px),repeating-linear-gradient(0deg,rgba(121,94,67,.11) 0 5px,transparent 5px 70px);opacity:.5}.route{position:absolute;left:92px;top:130px;width:230px;height:225px;border:4px dashed rgba(121,94,67,.45);border-radius:48% 50% 46% 55%;transform:rotate(18deg)}.zone{position:absolute;border:3px solid currentColor;border-radius:18px;background:color-mix(in srgb,currentColor 23%,white);padding:10px;display:grid;place-items:center;text-align:center;font-weight:900;box-shadow:0 8px 16px rgba(0,0,0,.08)}.zone small{display:block;font-weight:700;font-size:12px;color:var(--muted)}.zone.done:after{content:"✓";position:absolute;right:-8px;top:-8px;background:#ef6872;color:#fff;border-radius:50%;width:28px;height:28px;display:grid;place-items:center}.z-food{color:var(--food);right:22px;top:78px;width:104px;height:225px}.z-daily{color:var(--daily);left:104px;top:54px;width:190px;height:90px}.z-home{color:var(--home);left:34px;top:155px;width:140px;height:145px}.z-store{color:var(--store);right:36px;bottom:48px;width:184px;height:90px}.z-craft{color:var(--craft);left:34px;bottom:48px;width:140px;height:90px}.mapHint{margin:12px 0 14px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px}.zoneList{display:grid;gap:10px;margin-top:16px}.zoneBtn{display:flex;align-items:center;gap:12px;background:#fffdf8;border:1px solid var(--line);padding:12px;border-radius:18px;text-align:left}.zoneIcon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:900}.zoneInfo{flex:1}.zoneInfo b{display:block}.zoneInfo span{font-size:13px;color:var(--muted)}.stampMini{font-size:12px;border:1px dashed #d7c4ad;border-radius:999px;padding:6px 10px;color:var(--muted)}.stampMini.done{background:#fff0f1;border-color:#ef6872;color:#d8525c}.clueBox{padding:18px;border-radius:24px;background:#fffdf8;border:1px solid var(--line);box-shadow:var(--shadow)}.clueTitle{font-size:24px;font-weight:900;margin:4px 0;color:#e05761}.clueText{line-height:1.7;font-size:18px}.scenePhoto{width:100%;border-radius:20px;object-fit:cover;max-height:210px;margin:12px 0;border:1px solid var(--line)}.cameraShell{height:55svh;min-height:410px;background:#16181d;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow);border:6px solid #2c2c2f}.cameraShell video,.cameraShell .scanBg{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(.95) brightness(.82)}.scanBg{background-size:cover;background-position:center}.scanOverlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18),transparent 35%,rgba(0,0,0,.4));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#fff;text-align:center}.scanFrame{width:220px;height:220px;border:4px solid #fff;border-radius:28px;position:relative;box-shadow:0 0 0 999px rgba(0,0,0,.14)}.scanFrame:after{content:"";position:absolute;left:14px;right:14px;height:3px;top:24px;background:#73ffd5;box-shadow:0 0 14px #73ffd5;animation:scanLine 2s infinite}@keyframes scanLine{50%{top:188px}}.arTaoxi{position:absolute;right:18px;bottom:18px;width:116px;filter:drop-shadow(0 10px 15px rgba(0,0,0,.38));animation:bounce 1.6s infinite}@keyframes bounce{50%{transform:translateY(-10px)}}.scanBtn{background:#fff;color:#1c1c1c;border-radius:999px;padding:14px 22px;font-weight:900}.scanTopHint{position:absolute;left:16px;right:16px;top:16px;background:rgba(255,255,255,.88);color:#2a211c;border-radius:18px;padding:12px 14px;font-weight:800}.questionNum{font-size:13px;color:var(--red);font-weight:900;letter-spacing:.08em}.question{font-size:22px;line-height:1.45;margin:8px 0 16px;font-weight:900}.options{display:grid;gap:12px}.opt{background:#fff;border:2px solid var(--line);border-radius:18px;padding:14px;text-align:left;font-weight:800;color:var(--ink)}.opt.correct{border-color:#52b788;background:#effaf4}.opt.wrong{border-color:#df6565;background:#fff1f1}.feedback{margin-top:14px;border-radius:18px;padding:14px;background:#fff7e9;border:1px solid var(--line);line-height:1.6}.inputRow{display:flex;gap:8px;margin:12px 0}.answerInput{flex:1;border:2px solid var(--line);border-radius:16px;padding:13px 14px;background:#fff;font-weight:800}.stampCard{text-align:center;padding:24px}.bigStamp{width:140px;height:140px;border:8px double #df5a63;border-radius:50%;display:grid;place-items:center;margin:8px auto 18px;transform:rotate(-8deg);font-weight:900;color:#df5a63;background:#fff8f8;font-size:24px;line-height:1.2;box-shadow:0 10px 28px rgba(223,90,99,.18)}.unlockStory{background:#fffdf8;border:1px solid var(--line);border-radius:22px;padding:16px;text-align:left;line-height:1.7}.bookPage{background:#fffdf8;border:1px solid #ddc7ad;border-radius:24px;padding:20px;box-shadow:var(--shadow);position:relative;line-height:1.85}.bookPage:before{content:"";position:absolute;left:20px;top:20px;bottom:20px;border-left:5px double #d9b08c}.bookPage h3,.bookPage p{margin-left:18px}.bookPage h3{font-size:22px;margin-top:0}.locked{filter:grayscale(1);opacity:.55}.storyGrid{display:grid;gap:12px}.storySection{margin:8px 2px 0;font-weight:900;color:#c65b55;letter-spacing:.04em}.storyCard{background:#fffdf8;border:1px solid var(--line);border-radius:20px;padding:14px;text-align:left;display:flex;gap:12px;align-items:center}.storyIcon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;color:white;font-weight:900;flex:none}.footerNav{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,247,233,.86);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:10}.navBtn{background:transparent;color:#775d48;border-radius:14px;padding:8px 6px;font-size:12px;font-weight:800}.navBtn.active{background:#fff;color:#df5a63;box-shadow:0 4px 14px rgba(0,0,0,.06)}.navBtn span{display:block;font-size:20px}.toast{position:absolute;left:20px;right:20px;bottom:88px;background:#2c2e33;color:#fff;padding:12px 16px;border-radius:18px;z-index:20;transform:translateY(24px);opacity:0;transition:.25s}.toast.show{opacity:1;transform:none}.puzzle{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.piece,.slot{min-height:74px;border-radius:16px;border:2px dashed #c4a984;display:grid;place-items:center;padding:8px;text-align:center;font-weight:900;background:#fff}.piece{border-style:solid;background:#fff7e9;cursor:grab}.slot.filled{border-color:#52b788;background:#effaf4}.scanBadge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--muted);font-size:12px}.demoNote{font-size:12px;color:#866b54;line-height:1.6;background:#fff4df;border:1px solid #ead0ad;border-radius:16px;padding:12px;margin-top:12px}.completeGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:18px 0}.completeGrid .pageMark{height:62px;border-radius:14px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:#df5a63;font-weight:900}.completeGrid .pageMark.done{background:#fff0f1;border-color:#df5a63}.techPanel{font-size:13px;line-height:1.7;background:#f9ead1;border:1px solid #e1c19d;border-radius:18px;padding:12px;margin-top:12px;color:#65482f}.markerList{display:flex;gap:8px;overflow:auto;padding:4px 0}.marker{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 10px;font-size:13px;color:#6d5b4c}.kbd{font-family:ui-monospace,Menlo,monospace;background:#eee;border-radius:6px;padding:1px 5px}
+.app::before{content:"";position:absolute;inset:0;background-image:linear-gradient(transparent 23px,rgba(155,102,62,.06) 24px),radial-gradient(rgba(124,75,30,.08) 1px,transparent 1px);background-size:100% 24px,16px 16px;opacity:.55;pointer-events:none}.screen{position:absolute;inset:0;padding:24px 20px 92px;overflow:auto;opacity:0;transform:translateX(24px);transition:.28s ease;pointer-events:none}.screen.active{opacity:1;transform:none;pointer-events:auto}.safeBottom{height:16px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;position:relative;z-index:2}.backBtn,.ghostBtn{background:#fffdf8;border:1px solid var(--line);border-radius:999px;padding:10px 13px;color:var(--muted);box-shadow:0 4px 12px rgba(0,0,0,.04)}.tiny{font-size:12px;color:var(--muted)}.title{font-size:34px;line-height:1.12;margin:12px 0 8px;font-weight:900;letter-spacing:.02em}.title .pink{color:var(--red)}.subtitle{font-size:16px;color:var(--muted);line-height:1.7}.card{background:rgba(255,253,248,.9);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;position:relative;z-index:1}.primary{background:linear-gradient(180deg,#f47d85,#e75b66);color:white;border-radius:999px;padding:15px 22px;font-weight:900;box-shadow:0 10px 22px rgba(231,91,102,.28);width:100%}.secondary{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:13px 18px;font-weight:800;width:100%}.dangerLink{color:#b7584f;text-decoration:underline;background:transparent;padding:4px}.logo{width:160px;display:block;margin:12px auto 8px}.heroTaoxi{width:150px;display:block;margin:16px auto -4px;filter:drop-shadow(0 16px 18px rgba(120,67,47,.22))}.bookTabs{display:flex;gap:8px;justify-content:center;margin:18px 0}.dot{width:30px;height:30px;border:2px dashed #d8c4ad;border-radius:50%;display:grid;place-items:center;background:#fff7e9;color:transparent}.dot.done{border-style:solid;color:white;background:#ed6d77;font-size:16px;font-weight:900}.storyText{line-height:1.85;font-size:16px}.storyText strong{color:#cc4a54}.mapPanel{height:460px;border-radius:24px;border:1px solid var(--line);background:#fbecd8;position:relative;overflow:hidden;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}.mapPanel:before{content:"";position:absolute;inset:30px 44px;background:repeating-linear-gradient(90deg,rgba(121,94,67,.12) 0 6px,transparent 6px 54px),repeating-linear-gradient(0deg,rgba(121,94,67,.11) 0 5px,transparent 5px 70px);opacity:.5}.route{position:absolute;left:92px;top:130px;width:230px;height:225px;border:4px dashed rgba(121,94,67,.45);border-radius:48% 50% 46% 55%;transform:rotate(18deg)}.zone{position:absolute;border:3px solid currentColor;border-radius:18px;background:color-mix(in srgb,currentColor 23%,white);padding:10px;display:grid;place-items:center;text-align:center;font-weight:900;box-shadow:0 8px 16px rgba(0,0,0,.08)}.zone small{display:block;font-weight:700;font-size:12px;color:var(--muted)}.zone.done:after{content:"✓";position:absolute;right:-8px;top:-8px;background:#ef6872;color:#fff;border-radius:50%;width:28px;height:28px;display:grid;place-items:center}.z-food{color:var(--food);right:22px;top:78px;width:104px;height:225px}.z-daily{color:var(--daily);left:104px;top:54px;width:190px;height:90px}.z-home{color:var(--home);left:34px;top:155px;width:140px;height:145px}.z-store{color:var(--store);right:36px;bottom:48px;width:184px;height:90px}.z-craft{color:var(--craft);left:34px;bottom:48px;width:140px;height:90px}.mapHint{margin:12px 0 14px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px}.zoneList{display:grid;gap:10px;margin-top:16px}.zoneBtn{display:flex;align-items:center;gap:12px;background:#fffdf8;border:1px solid var(--line);padding:12px;border-radius:18px;text-align:left}.zoneIcon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:900}.zoneInfo{flex:1}.zoneInfo b{display:block}.zoneInfo span{font-size:13px;color:var(--muted)}.stampMini{font-size:12px;border:1px dashed #d7c4ad;border-radius:999px;padding:6px 10px;color:var(--muted)}.stampMini.done{background:#fff0f1;border-color:#ef6872;color:#d8525c}.clueBox{padding:18px;border-radius:24px;background:#fffdf8;border:1px solid var(--line);box-shadow:var(--shadow)}.clueTitle{font-size:24px;font-weight:900;margin:4px 0;color:#e05761}.clueText{line-height:1.7;font-size:18px}.scenePhoto{width:100%;border-radius:20px;object-fit:cover;max-height:210px;margin:12px 0;border:1px solid var(--line)}.cameraShell{height:55svh;min-height:410px;background:#16181d;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow);border:6px solid #2c2c2f}.cameraShell video,.cameraShell .scanBg{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(.95) brightness(.82)}.scanBg{background-size:cover;background-position:center}.scanOverlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18),transparent 35%,rgba(0,0,0,.4));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#fff;text-align:center}.scanFrame{width:220px;height:220px;border:4px solid #fff;border-radius:28px;position:relative;box-shadow:0 0 0 999px rgba(0,0,0,.14)}.scanFrame:after{content:"";position:absolute;left:14px;right:14px;height:3px;top:24px;background:#73ffd5;box-shadow:0 0 14px #73ffd5;animation:scanLine 2s infinite}@keyframes scanLine{50%{top:188px}}.arTaoxi{position:absolute;right:18px;bottom:18px;width:116px;filter:drop-shadow(0 10px 15px rgba(0,0,0,.38));animation:bounce 1.6s infinite}@keyframes bounce{50%{transform:translateY(-10px)}}.scanBtn{background:#fff;color:#1c1c1c;border-radius:999px;padding:14px 22px;font-weight:900}.scanTopHint{position:absolute;left:16px;right:16px;top:16px;background:rgba(255,255,255,.88);color:#2a211c;border-radius:18px;padding:12px 14px;font-weight:800}.questionNum{font-size:13px;color:var(--red);font-weight:900;letter-spacing:.08em}.question{font-size:22px;line-height:1.45;margin:8px 0 16px;font-weight:900;white-space:pre-line}.options{display:grid;gap:12px}.opt{background:#fff;border:2px solid var(--line);border-radius:18px;padding:14px;text-align:left;font-weight:800;color:var(--ink)}.opt.correct{border-color:#52b788;background:#effaf4}.opt.wrong{border-color:#df6565;background:#fff1f1}.feedback{margin-top:14px;border-radius:18px;padding:14px;background:#fff7e9;border:1px solid var(--line);line-height:1.6}.inputRow{display:flex;gap:8px;margin:12px 0}.answerInput{flex:1;border:2px solid var(--line);border-radius:16px;padding:13px 14px;background:#fff;font-weight:800}.stampCard{text-align:center;padding:24px}.bigStamp{width:140px;height:140px;border:8px double #df5a63;border-radius:50%;display:grid;place-items:center;margin:8px auto 18px;transform:rotate(-8deg);font-weight:900;color:#df5a63;background:#fff8f8;font-size:24px;line-height:1.2;box-shadow:0 10px 28px rgba(223,90,99,.18)}.unlockStory{background:#fffdf8;border:1px solid var(--line);border-radius:22px;padding:16px;text-align:left;line-height:1.7}.bookPage{background:#fffdf8;border:1px solid #ddc7ad;border-radius:24px;padding:20px;box-shadow:var(--shadow);position:relative;line-height:1.85}.bookPage:before{content:"";position:absolute;left:20px;top:20px;bottom:20px;border-left:5px double #d9b08c}.bookPage h3,.bookPage p{margin-left:18px}.bookPage h3{font-size:22px;margin-top:0}.locked{filter:grayscale(1);opacity:.55}.storyGrid{display:grid;gap:12px}.storySection{margin:8px 2px 0;font-weight:900;color:#c65b55;letter-spacing:.04em}.storyCard{background:#fffdf8;border:1px solid var(--line);border-radius:20px;padding:14px;text-align:left;display:flex;gap:12px;align-items:center}.storyIcon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;color:white;font-weight:900;flex:none}.footerNav{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,247,233,.86);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:10}.navBtn{background:transparent;color:#775d48;border-radius:14px;padding:8px 6px;font-size:12px;font-weight:800}.navBtn.active{background:#fff;color:#df5a63;box-shadow:0 4px 14px rgba(0,0,0,.06)}.navBtn span{display:block;font-size:20px}.navIcon{display:block;width:26px;height:26px;margin:0 auto 2px;object-fit:contain}.toast{position:absolute;left:20px;right:20px;bottom:88px;background:#2c2e33;color:#fff;padding:12px 16px;border-radius:18px;z-index:20;transform:translateY(24px);opacity:0;transition:.25s}.toast.show{opacity:1;transform:none}.puzzle{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.piece,.slot{min-height:74px;border-radius:16px;border:2px dashed #c4a984;display:grid;place-items:center;padding:8px;text-align:center;font-weight:900;background:#fff}.piece{border-style:solid;background:#fff7e9;cursor:grab}.slot.filled{border-color:#52b788;background:#effaf4}.scanBadge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--muted);font-size:12px}.demoNote{font-size:12px;color:#866b54;line-height:1.6;background:#fff4df;border:1px solid #ead0ad;border-radius:16px;padding:12px;margin-top:12px}.completeGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:18px 0}.completeGrid .pageMark{height:62px;border-radius:14px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:#df5a63;font-weight:900}.completeGrid .pageMark.done{background:#fff0f1;border-color:#df5a63}.techPanel{font-size:13px;line-height:1.7;background:#f9ead1;border:1px solid #e1c19d;border-radius:18px;padding:12px;margin-top:12px;color:#65482f}.markerList{display:flex;gap:8px;overflow:auto;padding:4px 0}.marker{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 10px;font-size:13px;color:#6d5b4c}.kbd{font-family:ui-monospace,Menlo,monospace;background:#eee;border-radius:6px;padding:1px 5px}
 
-.dialogueStage{display:grid;grid-template-columns:1fr;gap:18px;align-items:start;margin-top:8px}.portraitWrap{display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(180deg,#fffdf7,#f6ead7);border:2px solid var(--line);border-radius:24px;padding:14px;min-height:220px;max-width:240px;width:100%;margin:0 auto}.portraitWrap img{width:100%;max-width:180px;display:block;filter:drop-shadow(0 12px 18px rgba(0,0,0,.12))}.dialogueBox{background:#fff;border:2px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);min-height:240px;display:flex;flex-direction:column}.dialogueHeader{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.speakerTag{display:inline-flex;align-items:center;gap:8px;background:#fff0f1;color:#c44e59;border-radius:999px;padding:8px 14px;font-weight:800}.speakerTag.player{background:#eef6ff;color:#3b6d95}.dialogueStep{font-size:13px;color:var(--muted)}.dialogueText{font-size:20px;line-height:1.85;white-space:pre-line;flex:1}.dialogueHint{font-size:13px;color:var(--muted);margin-top:10px}.dialogueControls{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}.miniPortraitName{font-size:14px;color:var(--muted);margin-top:8px;text-align:center;font-weight:700}@media (max-width:720px){.dialogueStage{grid-template-columns:1fr;align-items:start}.portraitWrap{min-height:auto;padding:12px 12px 4px;max-width:220px}.portraitWrap img{max-width:140px}.dialogueBox{min-height:unset}.dialogueText{font-size:18px}}
+.dialogueStage{display:grid;grid-template-columns:1fr;gap:18px;align-items:start;margin-top:16px}.portraitWrap{display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(180deg,#fffdf7,#f6ead7);border:2px solid var(--line);border-radius:24px;padding:14px;min-height:220px;max-width:240px;width:100%;margin:0 auto}.portraitWrap img{width:100%;max-width:180px;display:block;filter:drop-shadow(0 12px 18px rgba(0,0,0,.12))}.dialogueBox{background:#fff;border:2px solid var(--line);border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow);min-height:240px;display:flex;flex-direction:column}.dialogueHeader{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.speakerTag{display:inline-flex;align-items:center;gap:8px;background:#fff0f1;color:#c44e59;border-radius:999px;padding:8px 14px;font-weight:800}.speakerTag.player{background:#eef6ff;color:#3b6d95}.dialogueStep{font-size:13px;color:var(--muted)}.dialogueText{font-size:20px;line-height:1.85;white-space:pre-line;flex:1}.dialogueHint{font-size:13px;color:var(--muted);margin-top:10px}.dialogueControls{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}.miniPortraitName{font-size:14px;color:var(--muted);margin-top:8px;text-align:center;font-weight:700}@media (max-width:720px){.dialogueStage{grid-template-columns:1fr;align-items:start}.portraitWrap{min-height:auto;padding:12px 12px 4px;max-width:220px}.portraitWrap img{max-width:140px}.dialogueBox{min-height:unset}.dialogueText{font-size:18px}}
 .pointSummary{text-align:center;padding:22px 18px}.pointCount{font-size:44px;line-height:1;font-weight:900;color:var(--red);margin:8px 0}.pointTrack{height:12px;background:#f1e3d0;border-radius:99px;overflow:hidden;margin:18px 0 8px}.pointTrack span{display:block;height:100%;background:linear-gradient(90deg,#f5a45f,#e75b66);border-radius:inherit;transition:width .3s ease}.stampGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0}.stampItem{min-width:0;text-align:center}.stampCircle{width:48px;height:48px;border:2px dashed #d9c5ac;border-radius:50%;display:grid;place-items:center;margin:0 auto 6px;color:transparent;font-weight:900}.stampItem.done .stampCircle{border-style:solid;border-color:#df5a63;background:#fff0f1;color:#df5a63}.stampItem b{font-size:11px;line-height:1.35;display:block}.rewardBox{background:#fff7e9;border:1px solid #efc995;border-radius:20px;padding:18px;text-align:left;margin-top:16px}.rewardBox h3{margin:0 0 8px;color:#b7584f}.rewardStatus{display:inline-block;background:#eaf5e7;color:#4d7c45;border-radius:999px;padding:6px 10px;font-size:13px;font-weight:800}.mutedButton{opacity:.55;cursor:not-allowed}
 .app.home-active::before{display:none}.app.home-active .footerNav{display:none}.homeScreen{padding:0;overflow:hidden;background:#7cccf1}.homeVisual{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}.homeScreen .homeStart{position:absolute;z-index:2;left:24px;right:24px;bottom:calc(24px + env(safe-area-inset-bottom));width:calc(100% - 48px)}
+.selectLabel{margin:22px 0 12px;font-size:18px;font-weight:900}.roleGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}.roleOption{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px 12px;background:#fff;border:3px solid var(--line);border-radius:22px;color:var(--ink);font-weight:900;transition:border-color .2s,background .2s,transform .2s}.roleOption img{width:auto;max-width:100%;height:220px;object-fit:contain}.roleOption.selected{border-color:var(--red);background:#fff0f1;transform:translateY(-3px);box-shadow:0 10px 22px rgba(231,91,102,.22)}.portraitWrap img.playerPortrait{width:auto;max-width:100%;max-height:240px;margin:0 auto}.primary:disabled{cursor:default;opacity:.65}.emblemGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}.emblemGrid figure{margin:0;text-align:center;font-weight:800}.emblemGrid img{width:100%;border-radius:14px;border:1px solid var(--line);display:block;margin-bottom:6px}.fieldRow{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-weight:800}.fieldRow span{flex:none}.assembleStage{position:relative;aspect-ratio:620/500;background:#fff7e9;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:8px 0 12px}.assembleStage img{position:absolute;user-select:none;-webkit-user-drag:none}.assembleFrame{inset:0;width:100%;height:100%}.assembleGhost{opacity:.16;filter:grayscale(1)}.assemblePlaced{animation:snapIn .25s ease-out}@keyframes snapIn{from{transform:scale(1.06)}}.tipsTitle{margin-top:6px;font-weight:800}.tipsList{margin:4px 0 6px;padding-left:22px;font-size:14px;line-height:1.6;color:var(--muted)}.assembleTray{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:92px}.assemblePiece{display:flex;flex-direction:column;align-items:center;gap:4px;width:78px;padding:6px;background:#fff7e9;border:2px solid var(--line);border-radius:14px;font-size:12px;font-weight:800;color:var(--ink);touch-action:none;cursor:grab}.assemblePiece img{width:100%;height:56px;object-fit:contain;pointer-events:none}.assemblePiece.armed{border-color:var(--red);background:#fff0f1}.dragGhost{position:fixed;z-index:50;width:120px;transform:translate(-50%,-50%);pointer-events:none;opacity:.9;filter:drop-shadow(0 8px 12px rgba(0,0,0,.3))}.completeNote{padding:18px;background:#fffdf8;border:1px solid var(--line);border-radius:22px;line-height:1.9}.completeNote p{margin:0 0 12px}.completeNote p:last-child{margin-bottom:0}.questionImage{display:block;width:min(240px,70%);margin:0 auto 16px;border-radius:18px;border:1px solid var(--line);background:#fff}.shakeBox{position:relative;background:#fff7e9;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:4px 0 8px}.shakeBox img{display:block;width:100%}.shakeCover{position:absolute;inset:0;background:#000;transition:opacity .2s;pointer-events:none}
+</style>
+<style>
+.bookTabs .dot{position:relative;flex:none;overflow:hidden;border:0;border-radius:50%;background:transparent;opacity:.48;filter:grayscale(1)}
+.bookTabs .dot.done{opacity:1;filter:none;background:transparent}
+.bookTabs .dot img,.stampCircle img{display:block;width:100%;height:100%;object-fit:cover}
+.bookTabs .dot span,.stampCircle span{position:absolute;right:-2px;bottom:-2px;display:grid;place-items:center;width:18px;height:18px;border:2px solid #fff;border-radius:50%;background:#ed6d77;color:#fff;font-size:11px;font-weight:900}
+.mapPanel .zone{display:flex;align-items:center;justify-content:center;gap:8px}
+.mapPanel .zone>img{display:block;width:40px;height:40px;flex:none;border-radius:11px;object-fit:cover}
+.mapPanel .zone>span{min-width:0}
+.mapPanel .z-food{flex-direction:column;gap:4px}
+.zoneIcon{position:relative;flex:none;padding:0;overflow:visible}
+.zoneIcon img{display:block;width:100%;height:100%;border-radius:12px;object-fit:cover}
+.zoneIcon.done:after{content:"✓";position:absolute;right:-5px;top:-5px;display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#ef6872;color:#fff;font-size:12px;font-weight:900}
+.stampCircle{position:relative;overflow:hidden;border:0;opacity:.48;filter:grayscale(1)}
+.stampItem.done .stampCircle{opacity:1;filter:none}
+.bigStamp.hasArtwork{display:block;overflow:hidden;border:0;border-radius:24px;padding:0;background:transparent;box-shadow:none;transform:none}
+.stampArtwork{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.storyIcon{position:relative;overflow:hidden;border-radius:14px}
+.storyIcon img{display:block;width:100%;height:100%;object-fit:cover}
+.storyIcon span{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.82);font-size:15px;transform:translate(-50%,-50%)}
 </style>
 </head>
 <body>
 <div class="app home-active" id="app">
   <section class="screen active homeScreen" id="screen-home">
     <img src="assets/img/主視覺v1.png" class="homeVisual" alt="桃城百味主視覺：桃城百味，Savoring Chiayi，Real-World Game">
-    <button class="primary homeStart" onclick="go('story')">開始任務</button>
+    <button class="primary homeStart" onclick="go('select')">開始任務</button>
+  </section>
+
+  <section class="screen" id="screen-select">
+    <div class="topbar"><button class="backBtn" onclick="go('home')">← 回首頁</button><span class="tiny">角色選擇</span></div>
+    <div class="card">
+      <h2 class="title" style="font-size:30px">成為<span class="pink">桃城小幫手</span></h2>
+      <p class="subtitle">今天，你將進入嘉義市立博物館，協助小嘉博找回遺失的筆記本，揭開藏在「桃城百味」裡的嘉義故事。</p>
+      <h3 class="selectLabel" id="roleLabel">請選擇你的角色：</h3>
+      <div class="roleGrid" role="radiogroup" aria-labelledby="roleLabel">
+        <button type="button" class="roleOption" role="radio" aria-checked="false" data-player="boy" onclick="selectPlayer('boy')"><img src="assets/img/player-boy.png" alt="男生小幫手"><span>男生小幫手</span></button>
+        <button type="button" class="roleOption" role="radio" aria-checked="false" data-player="girl" onclick="selectPlayer('girl')"><img src="assets/img/player-girl.png" alt="女生小幫手"><span>女生小幫手</span></button>
+      </div>
+      <button type="button" class="primary" id="roleStartBtn" disabled onclick="startAdventure()">開始冒險！</button>
+    </div>
   </section>
 
   <section class="screen" id="screen-story">
-    <div class="topbar"><button class="backBtn" onclick="go('home')">← 回首頁</button><span class="tiny">開場角色對話</span></div>
+    <div class="topbar"><button class="backBtn" onclick="go('select')">← 選擇角色</button><span class="tiny">開場故事</span></div>
     <div class="card">
-      <h2 class="title" style="font-size:30px">小嘉博的任務說明</h2>
+      <h2 class="title" style="font-size:30px">開頭｜桃喜大混亂</h2>
       <div class="dialogueStage">
-        <div class="portraitWrap">
+        <div class="portraitWrap" id="dialoguePortraitWrap">
           <div>
             <img src="assets/img/img3.png" id="dialoguePortrait" alt="角色立繪">
             <div class="miniPortraitName" id="dialoguePortraitName">小嘉博</div>
@@ -40,15 +75,43 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
         </div>
         <div class="dialogueBox">
           <div class="dialogueHeader">
-            <div class="speakerTag" id="dialogueSpeaker">小嘉博</div>
-            <div class="dialogueStep" id="dialogueStep">1 / 5</div>
+            <div class="speakerTag" id="dialogueSpeaker">旁白</div>
+            <div class="dialogueStep" id="dialogueStep">1 / 15</div>
           </div>
           <div class="dialogueText" id="dialogueText"></div>
-          <div class="dialogueHint" id="dialogueHint">點擊「下一句」聽小嘉博繼續說明任務。</div>
+          <div class="dialogueHint hidden" id="dialogueHint"></div>
           <div class="dialogueControls">
-            <button class="secondary" id="dialoguePreviousBtn" onclick="previousDialogue()">上一句</button>
-            <button class="primary" id="dialogueNextBtn" onclick="nextDialogue()">下一句</button>
-            <button class="primary hidden" id="dialogueMapBtn" onclick="go('map')">打開百味手帳地圖</button>
+            <button class="secondary" id="dialoguePreviousBtn" onclick="stepScene('dialogue',-1)">上一句</button>
+            <button class="primary" id="dialogueNextBtn" onclick="stepScene('dialogue',1)">下一句</button>
+            <button class="primary hidden" id="dialogueMapBtn" onclick="go('tutorial')">進入遊戲教學</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-tutorial">
+    <div class="topbar"><button class="backBtn" onclick="go('story')">← 回開場故事</button><span class="tiny">任務說明</span></div>
+    <div class="card">
+      <h2 class="title" style="font-size:30px">遊戲教學｜桃喜追蹤器</h2>
+      <div class="dialogueStage">
+        <div class="portraitWrap" id="tutorialPortraitWrap">
+          <div>
+            <img src="assets/img/img3.png" id="tutorialPortrait" alt="角色立繪">
+            <div class="miniPortraitName" id="tutorialPortraitName">小嘉博</div>
+          </div>
+        </div>
+        <div class="dialogueBox">
+          <div class="dialogueHeader">
+            <div class="speakerTag" id="tutorialSpeaker">小嘉博</div>
+            <div class="dialogueStep" id="tutorialStep">1 / 6</div>
+          </div>
+          <div class="dialogueText" id="tutorialText"></div>
+          <div class="dialogueHint" id="tutorialHint">點擊「下一句」，了解如何使用桃喜追蹤器。</div>
+          <div class="dialogueControls">
+            <button class="secondary" id="tutorialPreviousBtn" onclick="stepScene('tutorial',-1)">上一句</button>
+            <button class="primary" id="tutorialNextBtn" onclick="stepScene('tutorial',1)">下一句</button>
+            <button class="primary hidden" id="tutorialMapBtn" onclick="go('map')">開始追蹤！</button>
           </div>
         </div>
       </div>
@@ -60,7 +123,7 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
     <div class="card">
       <h2 class="title" style="font-size:30px" id="preludeTitle"></h2>
       <div class="dialogueStage">
-        <div class="portraitWrap">
+        <div class="portraitWrap" id="preludePortraitWrap">
           <div>
             <img src="assets/img/img3.png" id="preludePortrait" alt="角色立繪">
             <div class="miniPortraitName" id="preludePortraitName">小嘉博</div>
@@ -83,6 +146,34 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
     </div>
   </section>
 
+  <section class="screen" id="screen-cutscene">
+    <div class="topbar"><button class="backBtn" onclick="go('map')">← 回地圖</button><span class="tiny" id="cutsceneArea"></span></div>
+    <div class="card">
+      <h2 class="title" style="font-size:30px" id="cutsceneTitle"></h2>
+      <div class="dialogueStage">
+        <div class="portraitWrap" id="cutscenePortraitWrap">
+          <div>
+            <img src="assets/img/img3.png" id="cutscenePortrait" alt="角色立繪">
+            <div class="miniPortraitName" id="cutscenePortraitName">小嘉博</div>
+          </div>
+        </div>
+        <div class="dialogueBox">
+          <div class="dialogueHeader">
+            <div class="speakerTag" id="cutsceneSpeaker"></div>
+            <div class="dialogueStep" id="cutsceneStep"></div>
+          </div>
+          <div class="dialogueText" id="cutsceneText"></div>
+          <div class="dialogueHint hidden" id="cutsceneHint"></div>
+          <div class="dialogueControls">
+            <button class="secondary" id="cutscenePreviousBtn" onclick="stepScene('cutscene',-1)">上一句</button>
+            <button class="primary" id="cutsceneNextBtn" onclick="stepScene('cutscene',1)">下一句</button>
+            <button class="primary hidden" id="cutsceneMapBtn" onclick="renderQuestion();go('question')">前往謎題挑戰</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="screen" id="screen-map">
     <div class="topbar"><button class="backBtn" onclick="go('home')">←</button><span class="tiny">任務地圖</span></div>
     <div class="questBadge" style="margin:0 0 12px;">Quest Map</div>
@@ -90,11 +181,11 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
     <div class="bookTabs" id="mapDots"></div>
     <div class="mapPanel" id="mapPanel">
       <div class="route"></div>
-      <button class="zone z-food" onclick="selectZone('food')">嘉義滋味<small>涼麵與甜湯</small></button>
-      <button class="zone z-daily" onclick="selectZone('daily')">城中日常<small>中藥舖與醫館</small></button>
-      <button class="zone z-home" onclick="selectZone('home')">生活家屋<small>眷村客廳</small></button>
-      <button class="zone z-store" onclick="selectZone('store')">老店街<small>糖果店與老屋</small></button>
-      <button class="zone z-craft" onclick="selectZone('craft')">百工巷<small>製香與刺繡</small></button>
+      <button class="zone z-food" onclick="selectZone('food')"><img src="assets/img/map-嘉義滋味.png" alt=""><span>嘉義滋味<small>涼麵與甜湯</small></span></button>
+      <button class="zone z-daily" onclick="selectZone('daily')"><img src="assets/img/map-城中日常.png" alt=""><span>城中日常<small>中藥舖與醫館</small></span></button>
+      <button class="zone z-home" onclick="selectZone('home')"><img src="assets/img/map-生活家屋.png" alt=""><span>生活家屋<small>眷村客廳</small></span></button>
+      <button class="zone z-store" onclick="selectZone('store')"><img src="assets/img/map-老店街.png" alt=""><span>老店街<small>糖果店與老屋</small></span></button>
+      <button class="zone z-craft" onclick="selectZone('craft')"><img src="assets/img/map-百工巷.png" alt=""><span>百工巷<small>製香與刺繡</small></span></button>
     </div>
     <div class="mapHint">📍 已找回 <b id="foundCount">0 / 5</b> 頁《百味手帳》</div>
     <div class="zoneList" id="zoneList"></div>
@@ -106,6 +197,7 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
       <div class="scanBadge">🗺️ 地圖線索</div>
       <h2 class="clueTitle" id="clueTitle"></h2>
       <p class="clueText" id="clueText"></p>
+      <button class="secondary hidden" id="melodyBtn" style="margin:4px 0 12px" onclick="toggleMelody()">▶ 播放旋律</button>
       <img class="scenePhoto" id="cluePhoto" alt="展場照片">
       <button class="primary" onclick="goScan('taoxi')">開始尋找桃喜</button>
       <button class="secondary" style="margin-top:10px" onclick="go('map')">換一區探索</button>
@@ -116,7 +208,6 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
     <div class="topbar"><button class="backBtn" onclick="stopCamera();go('clue')">←</button><span class="tiny" id="scanTitle">AR 掃描</span></div>
     <div class="cameraShell">
       <video id="camera" autoplay muted playsinline class="hidden"></video>
-      <div class="scanBg" id="scanBg"></div>
       <div class="scanOverlay">
         <div class="scanTopHint" id="scanHint">請將鏡頭對準桃喜圖像</div>
         <div class="scanFrame"></div>
@@ -124,7 +215,6 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
         <button class="scanBtn" id="scanAction" onclick="mockScan()">模擬掃描成功</button>
       </div>
     </div>
-    <div class="techPanel">Web AR Demo：本頁會嘗試開啟手機相機；若瀏覽器未允許或以 file:// 開啟，會改用展場照片模擬掃描。正式版會將此模組替換為圖像辨識式 Web AR。</div>
   </section>
 
   <section class="screen" id="screen-question">
@@ -137,8 +227,8 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
       <div id="inputWrap" class="hidden">
         <div class="inputRow"><input id="answerInput" class="answerInput" placeholder="請輸入答案"><button class="primary" style="width:auto;padding:12px 18px" onclick="submitTextAnswer()">送出</button></div>
       </div>
-      <div id="puzzleWrap" class="hidden"></div>
       <div class="feedback hidden" id="feedback"></div>
+      <button class="primary hidden" id="feedbackNextBtn" style="margin-top:14px" onclick="nextStep()">繼續</button>
     </div>
   </section>
 
@@ -155,7 +245,7 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
   </section>
 
   <section class="screen" id="screen-storyBook">
-    <div class="topbar"><button class="backBtn" onclick="go('map')">← 回地圖</button><span class="tiny">桃喜日記與小嘉博日記</span></div>
+    <div class="topbar"><button class="backBtn" onclick="go('map')">← 回地圖</button><span class="tiny">百味手帳與小嘉博豆知識</span></div>
     <h2 class="title" style="font-size:28px">百味手帳頁面</h2>
     <div class="storyGrid" id="storyGrid"></div>
   </section>
@@ -192,7 +282,7 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
       <div class="stampGrid" id="pointStampGrid"></div>
       <div class="rewardBox" id="rewardBox">
         <h3>集滿五章可兌換</h3>
-        <p>完成五個展區任務後，可憑集點頁至服務台兌換紀念小禮。此頁為 Demo 的獎勵兌換參考。</p>
+        <p>完成五個展區任務後，可憑集點頁至服務台兌換紀念小禮。</p>
         <span class="rewardStatus" id="rewardStatus">尚未集滿</span>
       </div>
       <button class="primary hidden" id="rewardButton" onclick="go('reward')">查看完成回饋</button>
@@ -207,7 +297,6 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
       <p class="subtitle">你已找回五區的嘉義生活故事，獲得一次獎勵兌換資格。</p>
       <div class="rewardBox">
         <h3>獎勵兌換參考</h3>
-        <p>可兌換：桃城百味紀念明信片一張，或嘉義在地風味小禮一份。</p>
         <p class="tiny">正式活動請依現場公告與服務台實際供應內容為準。</p>
         <span class="rewardStatus">兌換資格已解鎖</span>
       </div>
@@ -216,131 +305,383 @@ button,input{font:inherit} button{border:none;cursor:pointer}.hidden{display:non
   </section>
 
   <div class="footerNav">
-    <button class="navBtn" onclick="go('home')"><span>🏠</span>首頁</button>
-    <button class="navBtn" onclick="go('map')"><span>🗺️</span>地圖</button>
-    <button class="navBtn" onclick="go('storyBook')"><span>📖</span>手帳</button>
-    <button class="navBtn" onclick="go('points')"><span>🎟️</span>集點</button>
+    <button class="navBtn" onclick="go('home')"><img class="navIcon" src="assets/img/nav-home.png" alt="">首頁</button>
+    <button class="navBtn" onclick="go('map')"><img class="navIcon" src="assets/img/nav-map.png" alt="">地圖</button>
+    <button class="navBtn" onclick="go('storyBook')"><img class="navIcon" src="assets/img/nav-stories.png" alt="">手帳</button>
+    <button class="navBtn" onclick="go('points')"><img class="navIcon" src="assets/img/nav-points.png" alt="">集點</button>
   </div>
   <div class="toast" id="toast"></div>
 </div>
 <script>
 const zones = {
-  food:{name:'嘉義滋味',color:'var(--food)',stamp:'嘉義滋味',photo:'assets/img/img7.jpg',clue:'桃喜正在幫忙調配白醋醬料！',hint:'到嘉義涼麵區附近找找看。',storyTitle:'嘉義涼麵的美味魔法！',story:`誰說涼麵一定要配純麻醬？那可就太大錯特錯了！\n\n嘉南平原的夏天總是悶熱難耐，濃厚的麻醬容易乾黏結塊、吃起來卡喉。於是嘉義人施展了獨門魔法，加入特製白醋（沙拉醬）！\n\n酸香滑順的醬汁取代厚重的芝麻香，每一口都冰涼開胃又爽口。這道從日本時代下流傳至今的在地滋味，就是嘉義涼麵的美味魔法。`,questions:[{type:'choice',stage:'第 2 小關',text:'猜猜看，桃喜正在幫什麼小吃料理醬料？',options:['A. 涼麵','B. 肉羹麵','C. 黑白切','D. 雞肉飯'],answer:0,ok:'答對了！白醋醬料就是嘉義涼麵的重要滋味。'},{type:'scan',stage:'第 3 小關',text:'請透過 AR 掃描附圖中的「豆漿豆花」，找到桃喜藏起來的《百味手帳》頁面。',scanPhoto:'assets/img/img8.png',ok:'掃描成功！你找到「豆漿豆花」，順利過關並拿到《百味手帳》頁面。'}]},
-  daily:{name:'城中日常',color:'var(--daily)',stamp:'城中日常',photo:'assets/img/img9.jpg',clue:'桃喜身上有濃濃藥草香，正在中藥舖翻找藥材！',hint:'到城中日常的嘉生藥舖附近找找看。',storyTitle:'藥櫃裡的四步偵探術',story:`中醫文化博大精深，其中最經典的看診智慧，莫過於「望、聞、問、切」四診。\n\n望，是端詳氣色與舌苔厚薄；聞，是細聽喘息呼吸、辨別口氣與體味；問，是探詢日常起居與近期身體感受；切，則是靜心切按脈搏，探觸體內臟腑的氣血流轉。\n\n這看似簡單的四步，正是中醫師與身體開啟深度對話的起點。`,questions:[{type:'choice',stage:'第 2 小關',text:'嘉義中藥行聚集的街道，過去稱為什麼？',options:['A. 中藥窟','B. 醫生街','C. 打鐵街','D. 布街'],answer:0,ok:'答對了！過去中藥行聚集的街道被稱為中藥窟。'},{type:'text',stage:'第 3 小關',text:'桃喜說手帳交給「陳老英醫生」。請找到他行醫的醫館名稱，輸入手帳所在的位置。',answer:['英安堂'],ok:'答對了！手帳頁面就在英安堂。'}]},
-  home:{name:'生活家屋',color:'var(--home)',stamp:'生活家屋',photo:'assets/img/img10.jpg',clue:'桃喜聽見熟悉的電視廣告歌，正跟著旋律哼唱！',hint:'到生活家屋的眷村客廳附近找找看。',storyTitle:'大同寶寶',story:`你知道家家戶戶幾乎都有一隻的大同寶寶，胸前號碼藏著什麼秘密嗎？\n\n大同在51週年時首度推出這款娃娃，第一批編號正是「51號」！當時特別設計成橄欖球員造型，象徵著身強體壯、耐操耐用的精神。\n\n原本只是買電器附贈的吉祥物，如今卻引起眾多玩具收藏迷的瘋狂追捧，尤其是某些年份稀少或具特殊特徵的大同寶寶，身價翻了百倍，堪稱老玩具界的保值傳奇。`,questions:[{type:'choice',stage:'第 2 小關',text:'建國二村、復國新村，主要是哪些軍種的眷村？',options:['A. 空軍、陸軍','B. 海軍、空軍','C. 陸軍、海軍'],answer:0,ok:'答對了！建國二村、復國新村與空軍、陸軍眷村脈絡相關。'},{type:'scan',stage:'第 3 小關',text:'眷村最有名的是麵食。請去找找「麵食」，掃描餐桌上的牛肉麵。',scanPhoto:'assets/img/img11.jpg',ok:'掃描成功！牛肉麵的香味把手帳頁面找回來了。'}]},
-  store:{name:'老店街',color:'var(--store)',stamp:'老店街',photo:'assets/img/img12.jpg',clue:'空氣裡有冬筍餅和汽水味，桃喜好像在大快朵頤地吃著美味零食！',hint:'到老店街的義佳糖果店與老屋模型附近找找看。',storyTitle:'摩登老屋',story:`近年來，嘉義市悄然展開一場場老屋的「摩登大秀」。\n\n得益於日益成熟的修繕技藝，老建築在褪去歲月斑駁的同時，依然完整保留了舊時的木質溫度與歷史肌理。\n\n如今的老屋不再只是過往，它們化身為飄散香氣的獨立咖啡館、沉浸感十足的實境解謎場域，更是承載在地文化、向旅人娓娓訴說城市身世的生動空間。`,questions:[{type:'scan',stage:'第 2 小關',text:'桃喜不小心弄倒老屋模型，想請你幫忙復原。請在展場尋找老屋模型並掃描老屋正面。',scanPhoto:'assets/img/img13.jpg',ok:'掃描成功！老屋模型出現散落零件。'},{type:'puzzle',stage:'第 3 小關',text:'將零件放到正確位置，拼回老屋原貌。',ok:'拼圖完成！老屋回復原貌，手帳頁面也找到了。'}]},
-  craft:{name:'百工巷',color:'var(--craft)',stamp:'百工巷',photo:'assets/img/img14.jpg',clue:'桃喜身上沾滿製香粉末，正在製香舖翻動材料！',hint:'到百工巷的嘉鄉古厝傳統製香附近找找看。',storyTitle:'刺繡工藝變化多',story:`抬頭望向精緻的刺繡八仙彩，漢鍾離、張果老、韓湘子、鐵拐李、曹國舅、呂洞賓、藍采和與何仙姑八位神仙齊聚一堂。\n\n八仙彩不只工藝細膩，名字裡更藏滿好彩頭：「八」音近「發」，象徵一路發財；「彩」則討個「好彩頭」的好兆頭。\n\n因此每逢入厝搬新家、迎親辦喜事，門楣上總會高高掛起這抹艷紅，不只為自家添福，也讓路過的人沾沾喜氣，把幸運一併帶回家。`,questions:[{type:'text',stage:'第 2 小關',text:'桃喜把其中一項製香原料的名字塗改成「日本新山」，請改回原本的名字。',answer:['澳洲新山'],ok:'答對了！原本的名字是澳洲新山。'},{type:'scan',stage:'第 3 小關',text:'桃喜亮出刺繡圖案。請找出這個圖案出現的位置，完成 AR 掃描。',scanPhoto:'assets/img/img15.jpg',ok:'掃描成功！八仙綵的祝福也寫進手帳了。'}]}
+  food:{name:'嘉義滋味',color:'var(--food)',stamp:'嘉義滋味',photo:'assets/img/img7.jpg',clue:'桃喜正在幫忙調配白醋醬料！',hint:'到嘉義涼麵區附近找找看。',mission:{title:'任務一｜找出桃喜',text:['桃喜就藏在「嘉義滋味區」裡。','仔細觀察展區，根據桃喜追蹤器上的提示，找出桃喜的位置吧！'],tip:'桃喜正在調製白色醬汁。'},storyTitle:'嘉義涼麵的美味魔法！',story:`小幫手：「熱到快融化了啦⋯⋯小嘉博！這盤看起來白白涼涼的是什麼？該不會是麻醬涼麵吧？」\n\n博：「嘿嘿，這可是嘉義限定的獨家秘密。誰說涼麵一定要配純麻醬？那可就大錯特錯囉！」\n\n小幫手：「咦？可是這醬汁看起來好像特別濃稠、顏色也比較淺耶？」\n\n博：「沒錯！嘉南平原的夏天總是悶熱難耐，如果只用厚重的麻醬，吃起來容易乾黏結塊還很卡喉。所以我們嘉義人施展了獨門魔法，加入了特製的『白醋』，也就是美乃滋/沙拉醬。」\n\n小幫手：「什麼！白醋加進涼麵裡？」\n\n博：「這你就不懂了～酸香滑順的白醋完美中和了濃郁感，每一口都冰涼開胃又爽口。這可是從日本時代流傳至今、在地人從小吃到大的美味魔法呢。」\n\n小幫手：「（吸一大口）哇⋯⋯這酸甜滑順的口感太神奇了，完全打破我對涼麵的想像，暑氣直接瞬間消散啦！」`,questions:[{type:'choice',stage:'第 2 小關｜解開美食謎題',text:'桃喜正在調配的神祕醬汁，原來就是嘉義人口中的「白醋」！\n\n這裡的「白醋」並不是一般的醋，而是一種白色的沙拉醬。\n\n請想一想：嘉義的哪一道美食會加入白醋呢？',options:['A. 涼麵','B. 肉羹麵','C. 黑白切','D. 雞肉飯'],answer:0,ok:'答對了！白醋醬料就是嘉義涼麵的重要滋味。'},{type:'scan',stage:'第 3 小關',text:'桃喜把【百味手帳】藏進了寶箱。\n\n想找到寶箱，就必須先找到桃喜留下的線索！\n\n🔎 線索\n嘉義滋味中有一道甜湯，會加入「豆漿」。\n這道甜湯，就是找出藏著【百味手帳】的寶箱關鍵！',scanPhoto:'assets/img/img8.png',ok:'掃描成功！你找到「豆漿豆花」，順利過關並拿到《百味手帳》頁面。'}]},
+  daily:{name:'城中日常',color:'var(--daily)',stamp:'城中日常',photo:'assets/img/img9.jpg',clue:'桃喜身上有濃濃藥草香，正在中藥舖翻找藥材！',hint:'到城中日常的嘉生藥舖附近找找看。',storyTitle:'藥櫃裡的四步偵探術',story:`小幫手：「小嘉博，我最近常常覺得身體卡卡的、說不上哪裡怪，感覺渾身都沒有力氣⋯⋯」\n\n博：「好，我來幫你『望、聞、問、切』一下！」\n\n小幫手：「哇，聽起來好神祕！這四個字到底分別在做什麼呀？」\n\n博：「第一步是『望』，中醫師會先仔細端詳你的氣色，還有看你的舌苔厚薄度；接著是『聞』，透過細聽你的呼吸喘息，順便辨別口氣與體味來抓出蛛絲馬跡。」\n\n小幫手：「原來連呼吸和味道都有學問，那後面兩步呢？」\n\n博：「第三步是『問』，醫師會像偵探一樣探詢你的日常起居與最近的身體感受；最後一步就是經典的『切』啦，安靜下來觸按你的脈搏，直接感受體內臟腑的氣血流轉狀況。」\n\n小幫手：「看起來簡單的四個步驟，卻充滿學問。」`,questions:[{type:'choice',stage:'第 2 小關',text:'桃喜說，【百味手帳】就藏在嘉義中藥行聚集的街道上。\n\n但是……\n\n這條街到底叫什麼名字？\n\n仔細觀察展區，找出街道名稱吧！',options:['A. 中藥窟','B. 醫生街','C. 打鐵街','D. 布街'],answer:0,ok:'答對了！過去中藥行聚集的街道被稱為中藥窟。'},{type:'text',stage:'第 3 小關',text:'桃喜留下了一張奇怪的老鷹圖，旁邊寫著「陳」。\n\n看起來，這隻老鷹似乎藏著【百味手帳】的最後線索。\n\n桃喜究竟想告訴我們什麼？\n\n🔎 解謎提示：「老鷹暗示某人的名字。」',answer:['英安堂'],ok:'答對了！手帳頁面就在英安堂。'}]},
+  home:{name:'生活家屋',color:'var(--home)',stamp:'生活家屋',photo:'assets/img/img10.jpg',clue:'桃喜聽見熟悉的電視廣告歌，正跟著旋律哼唱！',hint:'到生活家屋的眷村客廳附近找找看。',mission:{title:'任務一｜找出桃喜',text:['仔細聆聽從「桃喜追蹤器」傳來的旋律。','這首旋律似乎藏著桃喜的蹤跡。','🎵 請根據旋律提示，附近就是桃喜藏身的位置！'],audio:'assets/Tatung-song.mp3'},storyTitle:'大同寶寶',story:`小幫手：「小嘉博，你看我之前在阿公家翻到這隻經典的棕色小娃娃，聽說這隻『大同寶寶』幾乎以前家家戶戶都有一隻耶。不過他胸前頂著一個數字，有什麼意涵嗎？」\n\n博：「嘿嘿，這你就不懂了吧，大同公司在歡慶 51 週年時首度推出這款娃娃，所以第一批的編號剛好就是『51號』。」\n\n小幫手：「哇，原來編號是這樣來的，那為什麼他要穿得像個橄欖球員一樣？」\n\n博：「因為當時特別設計成橄欖球員的造型，就是象徵大同的產品身強體壯、耐操耐用的精神。」\n\n小幫手：「原來如此。」\n\n博：「現在可是吸引無數玩具收藏迷的瘋狂追捧，尤其是某些年份稀少、或是帶有特殊特徵的大同寶寶，身價可是直接翻了上百倍，簡直是老玩具界的保值傳奇。」`,questions:[{type:'multitext',stage:'第 2 小關',text:'桃喜追蹤器上出現了兩個奇怪的圖案。',prompt:'嘉義最早的兩個眷村和這兩個軍徽有關，分別是誰？',fields:[{label:'陸軍',caption:'陸軍軍徽',image:'assets/img/emblem-army.jpg',answer:['建國二村']},{label:'空軍',caption:'空軍軍徽',image:'assets/img/emblem-airforce.jpg',answer:['復國新村']}],ok:'答對了！陸軍是建國二村，空軍是復國新村。'},{type:'multitext',stage:'第 3 小關',text:'小嘉博仔細分析追蹤器傳來的數字。\n\n這個數字……看起來像是新住民的統計數字……\n\n【百味手帳】的線索，就藏在嘉義地區新住民人數最多的國家。',fields:[{label:'國家為',answer:['中國大陸']}],ok:'答對了！嘉義地區新住民人數最多的國家是中國大陸。'}]},
+  store:{name:'老店街',color:'var(--store)',stamp:'老店街',photo:'assets/img/img12.jpg',clue:'空氣裡有冬筍餅和汽水味，桃喜好像在大快朵頤地吃著美味零食！',hint:'到老店街的義佳糖果店與老屋模型附近找找看。',storyTitle:'摩登老屋',story:`小幫手：「小嘉博，我們剛剛路過好幾棟老建築，每間都時髦得不得了，到底是怎麼回事啊？」\n\n博：「這你可就有所不知了吧，近年來，我們嘉義市可是悄悄展開了一場場老屋的『摩登大秀』呢。」\n\n小幫手：「那些老房子褪去了歲月斑駁的痕跡後，怎麼還可以保留得這麼好？」\n\n博：「這就要歸功於日益成熟的建築修繕技藝啦。」\n\n小幫手：「難怪我剛剛看到有的老建築，變成飄著咖啡香的咖啡館，有的甚至搖身一變，成了超有沉浸感，實境遊戲的解謎場域。」`,questions:[{type:'shake',stage:'第 2 小關',text:'桃喜追蹤器拍到了一張黑色照片，但是，照片上的線索還沒有顯現出來。\n\n🖐️ 請用力搖動手機，讓照片顯現！',image:'assets/img/old-house-frame.svg',ok:'照片顯現了！這是老屋模型的結構圖。'},{type:'assemble',stage:'第 3 小關',text:'在繼續追桃喜之前，我們得先把老屋模型恢復原狀！',tipsTitle:'操作提示：',tips:['按住老屋零件。','拖曳到房屋的正確位置。','放到正確位置後，零件會自動固定。','將所有零件放回去，即可完成任務。'],frame:'assets/img/old-house-frame.svg',pieces:[{id:'left',label:'左側牆',image:'assets/img/old-house-left.png',box:{x:78,y:120,w:170,h:249}},{id:'right',label:'右側牆',image:'assets/img/old-house-right.png',box:{x:380,y:135,w:136,h:297}},{id:'front',label:'正面牆',image:'assets/img/old-house-front.png',box:{x:100,y:180,w:290,h:252}},{id:'roof',label:'屋頂',image:'assets/img/old-house-roof.png',box:{x:98,y:4,w:430,h:244}}],ok:'拼圖完成！老屋回復原貌，手帳頁面也找到了。'}]},
+  craft:{name:'百工巷',color:'var(--craft)',stamp:'百工巷',photo:'assets/img/img14.jpg',clue:'桃喜身上沾滿製香粉末，正在製香舖翻動材料！',hint:'到百工巷的嘉鄉古厝傳統製香附近找找看。',mission:{title:'任務一｜找出桃喜',text:['桃喜追蹤器上出現了一段神秘詩句：','香粉是土地的碎語，指尖是記憶的魔法。\n一揉，風土甦醒；一搓，故事成形；\n待煙火升起—整座城，都聞見了過往。','請根據詩句中的線索，找出桃喜藏身的位置。']},storyTitle:'刺繡工藝變化多',story:`小幫手：「小嘉博，你看前面那戶人家門楣上掛著一幅紅通通、刺繡精緻的布條，上面還繡了好幾個人物，那是什麼呀？」\n\n博：「這是『八仙彩』。」\n\n小幫手：「哇，上面的神仙看起來好多喔，有漢鍾離、張果老、韓湘子、鐵拐李、曹國舅、呂洞賓、藍采和跟何仙姑，八位神仙齊聚一堂耶。」\n\n博：「這塊『八仙彩』不只工藝細膩，還藏著吉利的諧音跟好彩頭呢。」\n\n小幫手：「快說快說！到底藏了什麼秘密？」\n\n博：「你看嘛，『八』的音聽起來就像『發』，象徵著一路發財；而『彩』就是討個『好彩頭』的意思。」\n\n小幫手：「原來是這樣，難怪每逢入厝搬新家或是迎親辦喜事的時候，大家都要把它高高掛在門楣上。」`,questions:[{type:'text',stage:'第 2 小關',text:'調皮的桃喜把製香舖的材料弄得亂七八糟。\n\n其中有一樣材料，竟然還被桃喜偷偷塗改成「日本新山」。\n\n請仔細觀察製香材料，找出被桃喜塗改的材料，改回原本的名字。',answer:['澳洲新山'],ok:'答對了！原本的名字是澳洲新山。'},{type:'scan',stage:'第 3 小關',text:'桃喜說【百味手帳】就藏在整條「百工巷」裡。\n\n但他只留下了一張神秘的圖片，圖片究竟代表什麼？',image:'assets/img/wind-chicken.jpg',prompt:'請仔細觀察圖片，在展場尋找圖片出現的位置並完成 AR 掃描，解開桃喜留下的暗號。',scanPhoto:'assets/img/img15.jpg',ok:'掃描成功！八仙綵的祝福也寫進手帳了。'}]}
 };
 const order=['food','daily','home','store','craft'];
+const zoneIcons={food:'assets/img/map-嘉義滋味.png',daily:'assets/img/map-城中日常.png',home:'assets/img/map-生活家屋.png',store:'assets/img/map-老店街.png',craft:'assets/img/map-百工巷.png'};
+const diaryIcons={food:'assets/img/diary01.png',daily:'assets/img/diary02.png',home:'assets/img/diary03.png',store:'assets/img/diary04.png',craft:'assets/img/diary05.png'};
+const wikiIcons=['assets/img/wiki01.png','assets/img/wiki02.png','assets/img/wiki03.png','assets/img/wiki04.png','assets/img/wiki05.png'];
 const extraStories=[
-  {id:'extra6',name:'小嘉博豆知識｜火雞肉飯',area:'嘉義滋味',storyTitle:'嘉義國民美食',story:`美援時期引入的火雞，因生長快、肉質豐，成了當年大眾的肉食之選。
-  
-  為了化解火雞本身的肉腥味，老字號以油蔥酥、雞油與豬油調和出靈魂醬汁。
-  
-  油亮噴香的醬汁滲入白飯，再戳破一顆半熟蛋，讓金黃蛋液與肉絲徹底融合，一口吃下，滿足得讓人嘴角合不攏。`},
-  {id:'extra7',name:'小嘉博豆知識｜青草店',area:'城中日常',storyTitle:'來自中藥的飲品',story:`嘉義依山面海，坐擁豐沛的自然資源。從阿里山採擷的靈芝草藥，到隨商港泊入的舶來藥材，層層堆疊出深厚的中藥文化。然而在嚴謹的中藥行之外，街巷裡的「青草店」藏在常民生活。
-  
-  店內懸掛陳列著各式乾燥生草，以柴火慢熬出一壺壺青草茶，過去正是老一輩人應對突發不適的隨身良方。
-  
-  下回漫步嘉義街頭若遇見青草老舖，不妨點上一杯「苦茶」，輕輕抿上一口，那股直衝腦門的味道，絕對令你永生難忘。`},
-  {id:'extra8',name:'小嘉博豆知識｜光陰的故事',area:'生活家屋',storyTitle:'建國二村的家常麵香',story:`1949年國民政府遷台，大批軍民隨之渡海而來，落腳於各地眷村。
-  
-  為便於統籌管理，聚落多冠以富含時代精神的名稱，如空軍眷舍常見的「建國一村」、「建國二村」。
-  
-  籬笆內的歲月交融了五湖四海，為台灣注入多元的飲食風貌，如今街巷飄香的紅燒牛肉麵、炭烤燒餅與酥脆油條，都是當年眷村媽媽與老兵手藝在此落地生根的滋味。`},
-  {id:'extra9',name:'小嘉博豆知識｜柑仔店',area:'老店街',storyTitle:'巷口的童年滋味',story:`童年最鮮明的記憶，總落在巷口那間柑仔店。
-  
-  一只只透明玻璃罐在架上一字排開，裡頭裝滿了形形色色的零嘴，果香撲鼻的一塊錢水果棒棒糖、越嚼越香的香菇肉乾，還有裝滿童趣的飛機餅乾。那時手裡攥著幾毛、幾塊錢的零錢，就能換來滿手快樂。
-  
-  炎炎夏日裡仰頭灌下一口冰涼的彈珠汽水，氣泡直衝喉嚨，那便是童年最純粹的幸福。如今走進明亮的便利商店，架上依然琳瑯滿目，卻再也找不回那份混雜著人情與歲月的滋味了。`},
-  {id:'extra10',name:'小嘉博豆知識｜製香',area:'百工巷',storyTitle:'來自信仰的香味',story:`嘉義自日治時期便以林業著稱，繁盛的伐木產業順勢催生了精細的木料磨粉工藝，為在地製香業奠定了得天獨厚的原料基石。
-  
-  與此同時，嘉義蓬勃的宮廟文化與民俗信仰，更衍生出龐大的祭祀需求，在「原料優勢」與「宗教底蘊」的雙重推動下，線香及其周邊香品產業應運而生，成為這座城市極具代表性的傳統印記。`}
+  {id:'extra6',name:'小嘉博豆知識｜火雞肉飯',area:'嘉義滋味',storyTitle:'嘉義國民美食',  story:`小幫手：「小嘉博！你今天端上桌的這碗白飯怎麼回事？香氣簡直快把我吸進去了啦！」
+
+  博：「嘿嘿，這可是我們嘉義的靈魂光芒，火雞肉飯！你知道嗎？火雞其實是美援時期才引進的喔！因為它長得快又肉多，當年可是大家吃肉的超級大明星呢。」
+
+  小幫手：「哇！巨無霸雞肉耶！可是⋯⋯火雞肉不會有一股特別的肉腥味嗎？」
+
+  博：「問得好！這就是老字號師傅厲害的地方啦！他們用油蔥酥、香噴噴的雞油，再加上豬油一起完美調和，變出了這碗飯的『靈魂醬汁』！」
+
+  小幫手：「油亮亮又噴香的醬汁⋯⋯光聽肚子就咕嚕嚕叫了、快讓我吃一口！」
+
+  博：「等一下！還沒完成呢！靈魂的最後一步是這個⋯⋯戳破半熟蛋！」
+
+  小幫手：「天啊⋯⋯金黃蛋液裹著肉絲和小祕密醬汁，這、這口下去，我的嘴角根本合不攏啦！太幸福了吧。」`},
+  {id:'extra7',name:'小嘉博豆知識｜青草店',area:'城中日常',storyTitle:'來自中藥的飲品',  story:`小幫手：「呼⋯⋯嘉義的太陽真的太熱情了，感覺整個人快被烤乾了。」
+
+  博：「你看轉角那間掛著滿滿乾燥草藥的老舖，這可是我們嘉義巷弄裡的常民智慧『青草店』。」
+
+  小幫手：「哇，店裡懸掛和陳列了好多奇奇怪怪的植物，這跟一般的中藥行有什麼不同？」
+
+  博：「嚴格來說，中藥行比較嚴謹，而青草店更貼近我們的日常生活。嘉義依山面海、資源豐沛，從阿里山採集的靈芝草藥到商港的舶來藥材，通通都在這裡匯聚。過去老一輩人如果身體有點突發的小不適，隨身良方就是來這裡找一壺柴火慢熬的青草茶。」
+
+  小幫手：「聽起來好厲害！那我也要學在地人來一杯。」
+
+  博：「嘿嘿，這可是你說的喔，來，這杯傳說中的『苦茶』請享用。」
+
+  小幫手：「（豪邁喝一大口）⋯⋯咳咳！天啊！這股苦味是怎麼回事？好苦呀！」`},
+  {id:'extra8',name:'小嘉博豆知識｜光陰的故事',area:'生活家屋',  storyTitle:'光陰的故事',story:`小幫手：「小嘉博，你看這條巷子裡的老房子好有特色喔，牆上還畫著國旗和以前的標語呢。」
+
+  博：「這裡可是充滿歷史故事的『眷村』喔，1949年國民政府遷台，大批軍民隨之渡海而來，就這樣落腳在各地聚落。」
+
+  小幫手：「難怪這些村子的名字聽起來都特別有時代精神，像是常見的『建國一村』、『建國二村』對吧？」
+
+  博：「當年的籬笆裡面可是交融了五湖四海的文化，也為台灣注入許多不同文化的多元飲食。」
+
+  小幫手：「難怪每次走進這種老街區，空氣中總好像飄著一股讓人流口水的香氣⋯⋯」
+
+  博：「對啦！像是現在街巷飄香的紅燒牛肉麵、炭烤燒餅與酥脆油條，全都是當年眷村媽媽與老兵們的好手藝，在這裡落地生根的美味味道。」`},
+  {id:'extra9',name:'小嘉博豆知識｜柑仔店',area:'老店街',storyTitle:'巷口的童年滋味',  story:`小幫手：「小嘉博，你看前面那間古早味的小店，那就是大家常說的『柑仔店』嗎？」
+
+  博：「對，童年最鮮明的快樂記憶，總是落在巷口的柑仔店裡。」
+
+  小幫手：「哇，你看架上一字排開的好多透明玻璃罐！裡面裝的都是什麼啊？看起來好好玩。」
+
+  博：「嘿嘿，裡面可是裝滿了許多寶藏，像是果香撲鼻的一塊錢水果棒棒糖、越嚼越香的香菇肉乾，還有長得像小飛機一樣、充滿童趣的飛機餅乾呢。」
+
+  小幫手：「真的耶，只要手裡攥著幾毛錢的零錢，就能換來滿手的快樂⋯⋯啊！大熱天裡如果能灌下一口冰涼的彈珠汽水，那簡直是天堂。」
+
+  博：「雖然現在有便利商店，但⋯⋯那種混雜著濃濃人情味與歲月痕跡的獨特滋味，都沒有了。」`},
+  {id:'extra10',name:'小嘉博豆知識｜製香',area:'百工巷',storyTitle:'來自信仰的香味',  story:`小幫手：「小嘉博，空氣中怎麼一直飄散著一股木質香氣啊？」
+
+  博：「這可是我們嘉義非常厲害的傳統產業『製香業』，你知道嗎？嘉義自從日治時期開始，就以繁盛的林業著稱呢。」
+
+  小幫手：「哇！伐木產業跟製香有什麼直接的關係嗎？」
+
+  博：「關係可大囉，當時發達的伐木業順勢催生了精細的木料磨粉工藝，直接為在地製香產業奠定了基礎。」
+
+  小幫手：「原來是這樣，難怪這裡的香氣特別道地。」
+
+  博：「加上嘉義本來就蓬勃發展的宮廟文化與民俗信仰，衍生出了龐大的祭祀需求。在這『原料優勢』與『宗教底蘊』的雙重推動下，線香和各式香品產業就這樣蓬勃而生啦。」`}
 ];
 let state={done:{},current:null,qIndex:0,scanMode:'taoxi'};
 const storeKey='taocityDemoStateV2';
 
 const dialogueScript=[
-  {speaker:'小嘉博',role:'npc',text:'嗨！我是小嘉博，這本《百味手帳》記錄著嘉義生活裡最有趣的故事。'},
-  {speaker:'小嘉博',role:'npc',text:'可是桃喜突然把手帳搶走，跑進桃城百味展區，還把一頁頁知識藏了起來！'},
-  {speaker:'MoMo醬',role:'player',text:'別擔心，我們一起追蹤桃喜，把手帳找回來！'},
-  {speaker:'小嘉博',role:'npc',text:'好！請跟著地圖尋找線索，完成掃描和解謎，就能找回五個展區的手帳頁面。'},
-  {speaker:'桃喜',role:'npc',text:'嘻嘻，想找到我，就先解開嘉義百味裡的秘密吧！'},
-  {speaker:'小嘉博',role:'npc',text:'準備好了嗎？桃喜，你跑不掉了！我們出發吧！'}
+  {speaker:'旁白',role:'narrator',text:'今天是你成為「桃城小幫手」的第一天。\n\n聽說，想要了解嘉義的食、衣、住、行，就要先從嘉義市立博物館開始！'},
+  {speaker:'旁白',role:'narrator',text:'你滿心期待地走進「桃城百味」展區，準備好好認識這座城市。沒想到才剛踏進展場，眼前竟突然衝出兩隻奇奇怪怪的生物！'},
+  {speaker:'旁白',role:'narrator',text:'「等等！不要跑——」\n\n兩個身影從你面前飛快掠過，似乎正在搶奪一本非常重要的筆記本。'},
+  {speaker:'旁白',role:'narrator',text:'你還來不及看清楚發生了什麼事，那隻長得像「桃子長出兩隻腳」的生物，已經一把抱住筆記本，拔腿就跑！'},
+  {speaker:'旁白',role:'narrator',text:'另一隻生物急忙追上去，卻不小心踩到自己的腳——\n\n「砰！」\n\n他重重地跌坐在地上，只能眼睜睜看著桃子消失在展場深處。'},
+  {speaker:'旁白',role:'narrator',text:'接著，他慢慢抬起頭，用一雙淚汪汪的眼睛直直看著你。\n\n你心想：\n「不要看我……拜託不要看我……」'},
+  {speaker:'旁白',role:'narrator',text:'但是，他完全沒有移開視線，還一邊抽抽噎噎，一邊擦著眼角的淚珠。'},
+  {speaker:'旁白',role:'narrator',text:'你的腦中立刻響起警報：\n\n「麻煩……」\n「麻煩……」\n「大麻煩要來了！」'},
+  {speaker:'旁白',role:'narrator',text:'這時，你才知道，眼前這隻神秘生物叫做「小嘉博」，是嘉義市立博物館的小幫手。'},
+  {speaker:'小嘉博',role:'npc',text:'嗚嗚嗚……那本筆記本裡記錄了好多重要的嘉義故事！桃喜把它搶走後，躲進展場裡了。你願意幫我找回來嗎？'},
+  {speaker:'小幫手',role:'player',text:'……我才剛來耶。'},
+  {speaker:'小嘉博',role:'npc',text:'拜託你！只要跟著線索找到桃喜，完成他留下的挑戰，就能一頁一頁找回筆記！'},
+  {speaker:'旁白',role:'narrator',text:'看著小嘉博可憐兮兮的模樣，你知道，自己大概已經逃不掉了。\n\n於是，你跟著小嘉博踏入「桃城百味」，展開一場尋找桃喜與《百味手帳》的冒險。'},
+  {speaker:'旁白',role:'narrator',text:'桃喜究竟為什麼搶走筆記本？\n\n那些散落在展場裡的手帳頁，又記錄了哪些嘉義故事？'},
+  {speaker:'旁白',role:'narrator',text:'現在，就由你這位「桃城小幫手」把答案一一找回來吧！'}
 ];
+const tutorialScript=[
+  {speaker:'小嘉博',role:'npc',text:'小幫手，準備好了嗎？'},
+  {speaker:'旁白',role:'narrator',text:'現在，就和小嘉博一起前往「桃城百味」展區，尋找躲在各個角落的調皮桃喜吧！'},
+  {speaker:'小嘉博',role:'npc',text:'請拿起手中的「桃喜追蹤器」，根據畫面上的線索，在展區裡仔細尋找桃喜。'},
+  {speaker:'小嘉博',role:'npc',text:'發現桃喜後，將追蹤器對準他進行掃描，就能開啟桃喜留下的謎題。'},
+  {speaker:'小嘉博',role:'npc',text:'只要成功解開謎題，就能找回一頁【百味手帳】！\n\n收集的手帳越多，就能解鎖更多關於嘉義食、衣、住、行的精彩故事。'},
+  {speaker:'小嘉博',role:'npc',text:'準備好了嗎？一起出發尋找桃喜吧！'}
+];
+const cutsceneScripts={
+  food:{
+    0:[
+    {speaker:'小幫手',role:'player',text:'白色醬汁……會藏在哪裡呢？'},
+    {speaker:'旁白',role:'narrator',text:'我循著線索仔細尋找，終於在展區的一個角落發現桃喜。'},
+    {speaker:'小幫手',role:'player',text:'找到了！'},
+    {speaker:'旁白',role:'narrator',text:'原來，桃喜正躲在一旁，忙著調配一瓶神祕的白色醬汁。'},
+    {speaker:'小幫手',role:'player',text:'桃喜，你在做什麼？'},
+    {speaker:'桃喜',role:'npc',text:'哼！沒想到這麼快就被你找到了。'},
+    {speaker:'桃喜',role:'npc',text:'我要調出全世界最厲害的白醋！這可是我的嘉義魂！'},
+    {speaker:'旁白',role:'narrator',text:'桃喜抱起神祕醬汁，得意地笑了起來。'}
+    ],
+    1:[
+    {speaker:'桃喜',role:'npc',text:'什麼！你居然這麼快就解開了！'},
+    {speaker:'旁白',role:'narrator',text:'桃喜氣得跺了跺腳。'},
+    {speaker:'桃喜',role:'npc',text:'哼！沒關係，我早就把珍貴的【百味手帳】藏起來了。'},
+    {speaker:'桃喜',role:'npc',text:'你一定猜不到寶箱藏在哪裡！'},
+    {speaker:'旁白',role:'narrator',text:'話才說完，桃喜便一溜煙地消失了。'}
+    ]
+  },
+  daily:{
+    0:[
+    {speaker:'旁白',role:'narrator',text:'經過一番尋找，我終於在中藥舖裡發現了桃喜的身影。'},
+    {speaker:'旁白',role:'narrator',text:'桃喜躲在角落，臉上還掛著得意的笑容。'},
+    {speaker:'桃喜',role:'npc',text:'嘿嘿……你們終於找到我了。'},
+    {speaker:'小幫手',role:'player',text:'桃喜！快告訴我，你把【百味手帳】藏到哪裡去了？'},
+    {speaker:'旁白',role:'narrator',text:'桃喜眨了眨眼睛，露出神祕的表情。'},
+    {speaker:'桃喜',role:'npc',text:'想要找到【百味手帳】嗎？'},
+    {speaker:'桃喜',role:'npc',text:'那就先解開我留下的謎題吧！'}
+    ],
+    1:[
+    {speaker:'小幫手',role:'player',text:'我知道了！這裡就是『中藥窟』！'},
+    {speaker:'旁白',role:'narrator',text:'桃喜驚訝地瞪大眼睛。'},
+    {speaker:'桃喜',role:'npc',text:'你怎麼會知道？'},
+    {speaker:'桃喜',role:'npc',text:'難道……是小嘉博偷偷告訴你的？'},
+    {speaker:'旁白',role:'narrator',text:'桃喜氣得直跺腳。'},
+    {speaker:'桃喜',role:'npc',text:'可惡！又被你解開了！'},
+    {speaker:'旁白',role:'narrator',text:'過了一會兒，桃喜突然露出神祕的笑容。'},
+    {speaker:'桃喜',role:'npc',text:'既然你這麼厲害，我就告訴你手帳的去處。'},
+    {speaker:'桃喜',role:'npc',text:'我已經把手帳交給一位神祕人物了。'},
+    {speaker:'小幫手',role:'player',text:'神祕人物？是誰？'},
+    {speaker:'桃喜',role:'npc',text:'想知道的話，就自己去問小嘉博吧！'},
+    {speaker:'旁白',role:'narrator',text:'話才說完——\n\n咻！\n\n桃喜轉身就跑，一下子便消失在人群之中。'}
+    ]
+  },
+  home:{
+    0:[
+    {speaker:'旁白',role:'narrator',text:'我仔細聆聽旋律，循著聲音在家屋裡四處尋找。'},
+    {speaker:'小幫手',role:'player',text:'啊！我找到了！'},
+    {speaker:'旁白',role:'narrator',text:'原來，桃喜正躲在電視旁的大同寶寶身邊。'},
+    {speaker:'小幫手',role:'player',text:'桃喜！原來你躲在這裡。'},
+    {speaker:'桃喜',role:'npc',text:'糟糕！被發現了！'},
+    {speaker:'旁白',role:'narrator',text:'桃喜一看到我，立刻轉身逃跑。'},
+    {speaker:'小幫手',role:'player',text:'桃喜，站住！別跑！'},
+    {speaker:'旁白',role:'narrator',text:'我連忙追了上去，眼前卻出現一處重現眷村生活的場景。'},
+    {speaker:'小幫手',role:'player',text:'咦？這裡是……眷村嗎？'},
+    {speaker:'旁白',role:'narrator',text:'我還來不及仔細查看，桃喜便趁機溜走，消失得無影無蹤。'},
+    {speaker:'小幫手',role:'player',text:'糟糕，又跟丟桃喜了……'},
+    {speaker:'小嘉博',role:'npc',text:'別擔心，快看看追蹤器裡有沒有留下新的線索。'}
+    ],
+    1:[
+    {speaker:'小幫手',role:'player',text:'我知道了！這兩個軍徽，分別代表『建國二村』和『復國新村』。'},
+    {speaker:'小嘉博',role:'npc',text:'原來如此！'},
+    {speaker:'小嘉博',role:'npc',text:'所以，桃喜很可能把【百味手帳】藏在這兩座眷村的線索裡。'},
+    {speaker:'旁白',role:'narrator',text:'我趕緊將找到的答案輸入桃喜追蹤器。\n\n557450……366714……190736......'},
+    {speaker:'旁白',role:'narrator',text:'沒想到，追蹤器裡竟然傳出好幾個數字。'},
+    {speaker:'小幫手',role:'player',text:'咦？這些數字是什麼？'},
+    {speaker:'小嘉博',role:'npc',text:'等等！追蹤器要我們從數字找到人數第一是誰。'},
+    {speaker:'旁白',role:'narrator',text:'小嘉博張開眼睛，在展場尋找數字的來源。'}
+    ]
+  },
+  store:{
+    0:[
+    {speaker:'旁白',role:'narrator',text:'我和小嘉博趕緊循著線索，來到老店街的糖果店。'},
+    {speaker:'旁白',role:'narrator',text:'桃喜正躲在糖果堆裡，嘴巴塞得鼓鼓的，大口吃著各式各樣的零食。'},
+    {speaker:'旁白',role:'narrator',text:'糖果、餅乾、零嘴……桃喜吃得肚子圓滾滾，連動作都變得慢吞吞。'},
+    {speaker:'小幫手',role:'player',text:'桃喜！原來你躲在這裡偷吃零食！'},
+    {speaker:'桃喜',role:'npc',text:'嘿嘿……因為實在太好吃了嘛！'},
+    {speaker:'旁白',role:'narrator',text:'看到我們追了上來，桃喜趕緊張開翅膀，準備逃跑。'},
+    {speaker:'旁白',role:'narrator',text:'可是，因為吃得太飽，桃喜怎麼飛都飛不快，只能慢吞吞地往前移動。'},
+    {speaker:'小幫手',role:'player',text:'這次不會再讓你溜走了！'},
+    {speaker:'旁白',role:'narrator',text:'我趕緊追上前，伸手想攔住桃喜。'},
+    {speaker:'旁白',role:'narrator',text:'沒想到——\n\n砰！\n\n一個不小心，我撞上了旁邊的老屋模型。'},
+    {speaker:'小幫手',role:'player',text:'啊！糟糕！'},
+    {speaker:'旁白',role:'narrator',text:'老屋模型被撞得東倒西歪，零件散落一地。'},
+    {speaker:'小嘉博',role:'npc',text:'不好了！老屋模型倒下來了！'},
+    {speaker:'小嘉博',role:'npc',text:'我們要把老屋復原才行，試試看桃喜追蹤器的『相機輔助功能』吧！'},
+    {speaker:'旁白',role:'narrator',text:'我趕緊拿起追蹤器，對著散落的老屋模型查看。'},
+    {speaker:'旁白',role:'narrator',text:'追蹤器突然發出一聲快門聲，螢幕上竟然出現一張黑漆漆的底片。'},
+    {speaker:'小幫手',role:'player',text:'咦？這張照片怎麼什麼都看不到？'},
+    {speaker:'小嘉博',role:'npc',text:'試著把底片刷一刷，應該就會出現老屋原本的模樣了。'}
+    ],
+    1:[
+    {speaker:'旁白',role:'narrator',text:'我拿起桃喜追蹤器，畫面中出現老屋的木構架，以及散落在四周的屋頂和牆面。'},
+    {speaker:'小嘉博',role:'npc',text:'老屋就像一座立體拼圖。屋頂、牆面和門窗，都有各自的位置。'},
+    {speaker:'小幫手',role:'player',text:'好！先把老屋修好，再繼續追桃喜！'}
+    ]
+  },
+  craft:{
+    0:[
+    {speaker:'旁白',role:'narrator',text:'我反覆讀著追蹤器上出現的詩句。'},
+    {speaker:'小幫手',role:'player',text:'香粉……指尖……一揉、一搓……'},
+    {speaker:'小嘉博',role:'npc',text:'這些線索好像都和一種傳統工藝有關。'},
+    {speaker:'旁白',role:'narrator',text:'循著詩句的提示，我們來到百工巷的製香舖，果然發現桃喜躲在裡面。'},
+    {speaker:'旁白',role:'narrator',text:'桃喜不只藏在這裡，還把製香師傅的材料弄得亂七八糟！'},
+    {speaker:'旁白',role:'narrator',text:'香粉、香料和工具散落一地，整間製香舖被弄得一團亂。'},
+    {speaker:'桃喜',role:'npc',text:'嘿嘿，這些東西看起來好有趣！'},
+    {speaker:'小幫手',role:'player',text:'桃喜！原來是你把這裡弄亂了！'}
+    ],
+    1:[
+    {speaker:'旁白',role:'narrator',text:'桃喜看到自己的惡作劇被發現，只好吐了吐舌頭。'},
+    {speaker:'桃喜',role:'npc',text:'哼！還是被你發現了。'},
+    {speaker:'小幫手',role:'player',text:'桃喜，快告訴我！【百味手帳】到底藏在哪裡？'},
+    {speaker:'旁白',role:'narrator',text:'桃喜眼珠一轉，露出神祕的笑容。'},
+    {speaker:'桃喜',role:'npc',text:'好啦、好啦，我可以告訴你。'},
+    {speaker:'小幫手',role:'player',text:'真的嗎？'},
+    {speaker:'桃喜',role:'npc',text:'不過……我只給你一點點線索！'},
+    {speaker:'旁白',role:'narrator',text:'桃喜神祕兮兮地拿出一張圖片。'},
+    {speaker:'桃喜',role:'npc',text:'想找到手帳，就自己想辦法解開圖片裡的祕密吧！'},
+    {speaker:'旁白',role:'narrator',text:'話才說完，桃喜又一溜煙地跑掉了。'}
+    ]
+  }
+};
+const scenes={
+  dialogue:{script:dialogueScript,index:0,hint:'',lastHint:'開場故事結束！點擊下方按鈕，進入遊戲教學。'},
+  tutorial:{script:tutorialScript,index:0,hint:'點擊「下一句」，了解如何使用桃喜追蹤器。',lastHint:'準備好了！點擊下方按鈕，開始追蹤桃喜。'},
+  cutscene:{script:[],index:0,hint:'',lastHint:''}
+};
+const playerKey='taocityPlayerV1';
+const players={
+  boy:{label:'男生小幫手',image:'assets/img/player-boy.png'},
+  girl:{label:'女生小幫手',image:'assets/img/player-girl.png'}
+};
+let player=null;
+try{const saved=localStorage.getItem(playerKey);if(players[saved])player=saved}catch(e){}
 const preludeScripts={
   food:[
-    {speaker:'小嘉博',text:'第一個線索傳來了！空氣裡有白色醬汁的香氣，桃喜一定正在嘉義滋味區搗蛋。'},
-    {speaker:'桃喜',text:'我要調出全世界最厲害的白醋！你們找得到我嗎？'},
-    {speaker:'MoMo醬',text:'從白醋和豆漿的線索開始追蹤，這次換我來解謎！'}
+    {speaker:'旁白',role:'narrator',text:'我和小嘉博來到了「嘉義滋味區」。'},
+    {speaker:'旁白',role:'narrator',text:'各種嘉義美食映入眼簾，彷彿連香味都飄進了鼻子裡。\n\n火雞肉飯、涼麵、豆花……光是想想，就讓我忍不住流口水。'},
+    {speaker:'小幫手',role:'player',text:'哇！這裡有好多好吃的東西！'},
+    {speaker:'小嘉博',role:'npc',text:'先別急著吃，我們還要完成尋找桃喜的任務呢。'},
+    {speaker:'小幫手',role:'player',text:'對喔！趕快看看桃喜追蹤器上有什麼提示吧。'}
   ],
   daily:[
-    {speaker:'小嘉博',text:'這一區飄來濃濃的藥材香，桃喜就躲在中藥行附近。'},
-    {speaker:'桃喜',text:'只要解出這條街的名字，就能知道手帳下一頁在哪裡。'},
-    {speaker:'MoMo醬',text:'中藥材、老鷹圖，還有醫館線索……我會找出答案！'}
+    {speaker:'旁白',role:'narrator',text:'走進「城中日常區」，熱鬧的街景與琳瑯滿目的店家，一下子就吸引了我的目光。'},
+    {speaker:'小幫手',role:'player',text:'哇，這裡好熱鬧！有好多不同的店家。'},
+    {speaker:'旁白',role:'narrator',text:'可是，展區這麼大，桃喜到底躲在哪裡呢？'},
+    {speaker:'小幫手',role:'player',text:'店家這麼多，該從哪裡開始找起啊……'},
+    {speaker:'小嘉博',role:'npc',text:'別急！仔細看看桃喜追蹤器上的訊息，裡面一定藏著線索。'},
+    {speaker:'旁白',role:'narrator',text:'我拿起追蹤器，開始仔細尋找桃喜的蹤跡。'},
+    {speaker:'小幫手',role:'player',text:'奇怪……追蹤器顯示桃喜就在附近，怎麼看不到他的身影？'},
+    {speaker:'旁白',role:'narrator',text:'這時，一股濃濃的中藥材香氣飄了過來。'},
+    {speaker:'小幫手',role:'player',text:'咦？這是什麼味道？'},
+    {speaker:'小嘉博',role:'npc',text:'我聞到了……是中藥材的味道！'},
+    {speaker:'小幫手',role:'player',text:'中藥材的味道……難道桃喜就躲在中藥舖裡？'},
+    {speaker:'旁白',role:'narrator',text:'我和小嘉博循著藥材香氣，朝中藥舖走了過去。'}
   ],
   home:[
-    {speaker:'小嘉博',text:'你聽到了嗎？熟悉的旋律從生活家屋傳來，桃喜可能躲在大同寶寶旁邊。'},
-    {speaker:'桃喜',text:'這裡的故事和眷村生活有關，你們可別只顧著聽歌喔！'},
-    {speaker:'MoMo醬',text:'我會從軍徽和麵食線索一路追下去，找到被藏起來的手帳！'}
+    {speaker:'旁白',role:'narrator',text:'一路追蹤桃喜的腳步，我和小嘉博來到「生活家屋區」。'},
+    {speaker:'旁白',role:'narrator',text:'桃喜似乎早就發現我們追了過來，一進到屋裡，立刻躲得不見蹤影。'},
+    {speaker:'小幫手',role:'player',text:'咦？桃喜又躲到哪裡去了？'},
+    {speaker:'小嘉博',role:'npc',text:'先別急！你看，桃喜追蹤器好像有反應了！'},
+    {speaker:'旁白',role:'narrator',text:'♪ 噠噠噠……♪\n\n追蹤器裡傳來一陣奇怪的聲音。'},
+    {speaker:'小幫手',role:'player',text:'咦？這是什麼聲音？'},
+    {speaker:'小嘉博',role:'npc',text:'聽起來好像不是普通的提示音……'},
+    {speaker:'旁白',role:'narrator',text:'我仔細聽了聽，發現聲音裡藏著一段熟悉的節奏。'},
+    {speaker:'小幫手',role:'player',text:'等等！這好像是一首歌的旋律！'}
   ],
   store:[
-    {speaker:'小嘉博',text:'老店街出現了奇怪的黑底片，桃喜似乎在糖果店附近留下了痕跡。'},
-    {speaker:'桃喜',text:'請用力刷動底片，看看老屋的秘密會不會出現！'},
-    {speaker:'MoMo醬',text:'先顯影，再修好被撞倒的老屋模型，手帳一定就在附近。'}
+    {speaker:'旁白',role:'narrator',text:'我和小嘉博一路追尋桃喜的蹤跡，終於來到充滿懷舊氣息的「老店街區」。'},
+    {speaker:'旁白',role:'narrator',text:'可是，我們找遍街區各個角落，卻怎麼也找不到桃喜。'},
+    {speaker:'小幫手',role:'player',text:'奇怪，桃喜到底躲到哪裡去了？'},
+    {speaker:'旁白',role:'narrator',text:'我趕緊拿起追蹤器，對著老店街四處查看。'},
+    {speaker:'小幫手',role:'player',text:'這裡沒有……那裡也沒有……'},
+    {speaker:'旁白',role:'narrator',text:'喀嚓！\n\n追蹤器突然發出一聲咀嚼聲。'},
+    {speaker:'小幫手',role:'player',text:'咦？這聲音怎麼這麼像在吃零食餅乾？'},
+    {speaker:'小嘉博',role:'npc',text:'趕快找找，哪裡有很多零食餅乾。'},
+    {speaker:'小嘉博',role:'npc',text:'再慢一點怕桃喜把東西都吃光了！'}
   ],
   craft:[
-    {speaker:'小嘉博',text:'百工巷傳來香粉味，詩句裡的「一揉一搓」正指向傳統製香舖。'},
-    {speaker:'桃喜',text:'桃喜，你又在搗蛋！材料名稱被我塗改了，你們猜得回來嗎？'},
-    {speaker:'MoMo醬',text:'香粉、指尖和刺繡圖案，我會解開線索，把手帳找回來！'}
+    {speaker:'旁白',role:'narrator',text:'眼看桃喜就在前方，我使出一招——「華麗前撲」！'},
+    {speaker:'小幫手',role:'player',text:'這次抓到你了！'},
+    {speaker:'旁白',role:'narrator',text:'沒想到桃喜身手敏捷，一個轉身便閃了過去。'},
+    {speaker:'小幫手',role:'player',text:'啊——！'},
+    {speaker:'旁白',role:'narrator',text:'我撲了個空，整個人直接趴倒在地。等我抬起頭時，頭髮亂成一團，模樣看起來十分狼狽。'},
+    {speaker:'旁白',role:'narrator',text:'小嘉博趕緊跑過來，把我扶了起來。'},
+    {speaker:'小嘉博',role:'npc',text:'小幫手，你沒事吧？'},
+    {speaker:'小幫手',role:'player',text:'我沒事……桃喜跑到哪裡去了？'},
+    {speaker:'旁白',role:'narrator',text:'小嘉博沒有回答，只是指了指手中的桃喜追蹤器。'},
+    {speaker:'小嘉博',role:'npc',text:'先看看追蹤器吧！桃喜一定又留下了新的線索。'},
+    {speaker:'旁白',role:'narrator',text:'我拿起追蹤器一看……'},
+    {speaker:'旁白',role:'narrator',text:'這次出現的訊息，不是氣味、聲音，也不是圖片，而是一段奇怪的詩句。'}
   ]
 };
-let dialogueIndex=0;
 let preludeIndex=0;
 const portraitImages={
   '小嘉博':'assets/img/img3.png',
   'MoMo醬':'assets/img/img3.png',
   '桃喜':'assets/img/img2.png'
 };
+const isPlayerLine=item=>item.role==='player'||item.speaker==='MoMo醬';
+const speakerLabel=item=>item.speaker==='MoMo醬'?'小幫手':item.speaker;
 function updatePortrait(prefix,item){
   const portrait=document.getElementById(prefix+'Portrait');
   const name=document.getElementById(prefix+'PortraitName');
+  const wrap=document.getElementById(prefix+'PortraitWrap');
   if(!portrait||!name)return;
-  portrait.src=portraitImages[item.speaker]||portraitImages['小嘉博'];
-  portrait.alt=item.speaker+'立繪';
-  name.textContent=item.speaker;
+  const isPlayer=isPlayerLine(item);
+  const speaker=speakerLabel(item);
+  if(wrap)wrap.classList.toggle('hidden',item.role==='narrator');
+  portrait.src=(isPlayer&&player)?players[player].image:(portraitImages[item.speaker]||portraitImages['小嘉博']);
+  portrait.classList.toggle('playerPortrait',isPlayer&&!!player);
+  portrait.alt=speaker+'立繪';
+  name.textContent=speaker;
 }
-function renderDialogue(){
-  const item=dialogueScript[dialogueIndex];
-  const speaker=document.getElementById('dialogueSpeaker');
-  const step=document.getElementById('dialogueStep');
-  const text=document.getElementById('dialogueText');
-  const hint=document.getElementById('dialogueHint');
-  const nextBtn=document.getElementById('dialogueNextBtn');
-  const mapBtn=document.getElementById('dialogueMapBtn');
-  const previousBtn=document.getElementById('dialoguePreviousBtn');
-  if(!speaker||!step||!text) return;
-  speaker.textContent=item.speaker;
-  speaker.className='speakerTag'+(item.role==='player'?' player':'');
-  updatePortrait('dialogue',item);
-  step.textContent=`${dialogueIndex+1} / ${dialogueScript.length}`;
-  text.textContent=item.text;
-  const isLast=dialogueIndex===dialogueScript.length-1;
-  hint.textContent=isLast?'任務說明完成！點擊下方按鈕，開始探索桃城百味。':'點擊「下一句」聽小嘉博繼續說明任務。';
-  nextBtn.classList.toggle('hidden',isLast);
-  mapBtn.classList.toggle('hidden',!isLast);
-  previousBtn.disabled=dialogueIndex===0;
+function renderScene(prefix){
+  const scene=scenes[prefix];
+  const item=scene.script[scene.index];
+  const speaker=document.getElementById(prefix+'Speaker');
+  if(!speaker)return;
+  speaker.textContent=speakerLabel(item);
+  speaker.className='speakerTag'+(isPlayerLine(item)?' player':'');
+  updatePortrait(prefix,item);
+  document.getElementById(prefix+'Step').textContent=`${scene.index+1} / ${scene.script.length}`;
+  document.getElementById(prefix+'Text').textContent=item.text;
+  const isLast=scene.index===scene.script.length-1;
+  const hintText=isLast?scene.lastHint:scene.hint;
+  const hint=document.getElementById(prefix+'Hint');
+  hint.textContent=hintText;
+  hint.classList.toggle('hidden',!hintText);
+  document.getElementById(prefix+'NextBtn').classList.toggle('hidden',isLast);
+  document.getElementById(prefix+'MapBtn').classList.toggle('hidden',!isLast);
+  document.getElementById(prefix+'PreviousBtn').disabled=scene.index===0;
 }
-function nextDialogue(){ if(dialogueIndex<dialogueScript.length-1){ dialogueIndex++; renderDialogue(); } }
-function previousDialogue(){ if(dialogueIndex>0){ dialogueIndex--; renderDialogue(); } }
-function resetDialogue(){ dialogueIndex=0; renderDialogue(); }
+function stepScene(prefix,delta){
+  const scene=scenes[prefix];
+  const next=scene.index+delta;
+  if(next>=0&&next<scene.script.length){scene.index=next;renderScene(prefix)}
+}
+function resetScene(prefix){scenes[prefix].index=0;renderScene(prefix)}
+function startCutscene(){
+  const z=zones[state.current];
+  scenes.cutscene.script=cutsceneScripts[state.current][state.qIndex];
+  document.getElementById('cutsceneArea').textContent=z.name;
+  document.getElementById('cutsceneTitle').textContent=z.storyTitle;
+  resetScene('cutscene');
+}
+function selectPlayer(id){
+  if(!players[id])return;
+  player=id;
+  document.querySelectorAll('.roleOption').forEach(b=>{const on=b.dataset.player===id;b.classList.toggle('selected',on);b.setAttribute('aria-checked',on)});
+  document.getElementById('roleStartBtn').disabled=false;
+}
+function renderSelect(){
+  document.querySelectorAll('.roleOption').forEach(b=>{const on=b.dataset.player===player;b.classList.toggle('selected',on);b.setAttribute('aria-checked',on)});
+  document.getElementById('roleStartBtn').disabled=!player;
+}
+function startAdventure(){
+  if(!player)return;
+  try{localStorage.setItem(playerKey,player)}catch(e){showToast('此瀏覽器無法儲存角色，本次遊戲仍可繼續。')}
+  go('story');
+}
 function renderPrelude(){
   const script=preludeScripts[state.current]||[];
   const item=script[preludeIndex];
   document.getElementById('preludeArea').textContent=zones[state.current].name;
   document.getElementById('preludeTitle').textContent=zones[state.current].storyTitle;
-  document.getElementById('preludeSpeaker').textContent=item.speaker;
-  document.getElementById('preludeSpeaker').className='speakerTag'+(item.speaker==='MoMo醬'?' player':'');
+  document.getElementById('preludeSpeaker').textContent=speakerLabel(item);
+  document.getElementById('preludeSpeaker').className='speakerTag'+(isPlayerLine(item)?' player':'');
   updatePortrait('prelude',item);
   document.getElementById('preludeStep').textContent=`${preludeIndex+1} / ${script.length}`;
   document.getElementById('preludeText').textContent=item.text;
@@ -353,33 +694,132 @@ function nextPrelude(){const script=preludeScripts[state.current]||[];if(prelude
 function previousPrelude(){if(preludeIndex>0){preludeIndex--;renderPrelude()}}
 function resetPrelude(){preludeIndex=0;renderPrelude()}
 
-function load(){try{Object.assign(state,JSON.parse(localStorage.getItem(storeKey)||'{}'))}catch(e){};renderAll(); if(document.getElementById('dialogueText')) renderDialogue()}
+function load(){try{Object.assign(state,JSON.parse(localStorage.getItem(storeKey)||'{}'))}catch(e){};renderAll(); renderScene('dialogue')}
 function save(){localStorage.setItem(storeKey,JSON.stringify({done:state.done}))}
-function go(name){stopCamera();document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+name).classList.add('active');document.getElementById('app').classList.toggle('home-active',name==='home');renderNav(name);if(name==='story')resetDialogue();if(name==='prelude')resetPrelude();if(name==='map')renderMap();if(name==='points')renderPoints();if(name==='storyBook')renderStories();if(name==='complete')renderComplete();}
+function go(name){stopCamera();stopMelody();if(name!=='question')stopShake();document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+name).classList.add('active');document.getElementById('app').classList.toggle('home-active',name==='home');renderNav(name);if(name==='select')renderSelect();if(name==='story')resetScene('dialogue');if(name==='tutorial')resetScene('tutorial');if(name==='cutscene')startCutscene();if(name==='prelude')resetPrelude();if(name==='map')renderMap();if(name==='points')renderPoints();if(name==='storyBook')renderStories();if(name==='complete')renderComplete();}
 function renderNav(name){document.querySelectorAll('.navBtn').forEach(b=>b.classList.remove('active')); const idx={home:0,map:1,storyBook:2}[name]; if(idx!==undefined)document.querySelectorAll('.navBtn')[idx].classList.add('active')}
 function doneCount(){return order.filter(k=>state.done&&state.done[k]).length}
-function renderDots(id){const el=document.getElementById(id); if(!el)return; el.innerHTML=order.map(k=>`<div class="dot ${state.done[k]?'done':''}">${state.done[k]?'✓':''}</div>`).join('')}
+function renderDots(id){const el=document.getElementById(id); if(!el)return; el.innerHTML=order.map(k=>`<div class="dot ${state.done[k]?'done':''}" aria-label="${zones[k].name}${state.done[k]?'已完成':'未完成'}"><img src="${zoneIcons[k]}" alt="">${state.done[k]?'<span aria-hidden="true">✓</span>':''}</div>`).join('')}
 function renderAll(){renderDots('homeDots');renderDots('mapDots');renderMap();}
-function renderMap(){renderDots('mapDots');document.getElementById('foundCount').textContent=doneCount()+' / 5';document.querySelectorAll('.zone').forEach(z=>z.classList.remove('done'));order.forEach(k=>{if(state.done[k])document.querySelector('.z-'+(k==='food'?'food':k==='daily'?'daily':k==='home'?'home':k==='store'?'store':'craft')).classList.add('done')});const list=document.getElementById('zoneList');list.innerHTML=order.map(k=>{const z=zones[k];return `<button class="zoneBtn" onclick="selectZone('${k}')"><div class="zoneIcon" style="background:${z.color}">${state.done[k]?'✓':'?'}</div><div class="zoneInfo"><b>${z.name}</b><span>${z.hint}</span></div><div class="stampMini ${state.done[k]?'done':''}">${state.done[k]?'已找回':'未完成'}</div></button>`}).join('');}
-function selectZone(k){state.current=k;state.qIndex=0;const z=zones[k];document.getElementById('clueTitle').textContent=z.name+'｜桃喜躲在哪裡？';document.getElementById('clueText').innerHTML=`「${z.clue}」<br><span class="tiny">提示：${z.hint}</span>`;document.getElementById('cluePhoto').src=z.photo;go('prelude')}
-function goScan(mode){state.scanMode=mode;const z=zones[state.current];document.getElementById('scanBg').style.backgroundImage=`url(${(mode==='taoxi'||!zones[state.current].questions[state.qIndex]?.scanPhoto)?z.photo:zones[state.current].questions[state.qIndex].scanPhoto})`;document.getElementById('scanTitle').textContent=mode==='taoxi'?'AR 掃描桃喜':'AR 掃描展品';document.getElementById('scanHint').textContent=mode==='taoxi'?'請將鏡頭對準桃喜圖像':'請將鏡頭對準指定展品或標記';document.getElementById('arTaoxi').classList.add('hidden');go('scan');startCamera()}
-async function startCamera(){const v=document.getElementById('camera');try{if(!navigator.mediaDevices?.getUserMedia)throw new Error('no camera');const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false});v.srcObject=stream;v.classList.remove('hidden');document.getElementById('scanBg').classList.add('hidden')}catch(e){v.classList.add('hidden');document.getElementById('scanBg').classList.remove('hidden')}}
-function stopCamera(){const v=document.getElementById('camera');if(v?.srcObject){v.srcObject.getTracks().forEach(t=>t.stop());v.srcObject=null}document.getElementById('scanBg')?.classList.remove('hidden')}
-function mockScan(){document.getElementById('arTaoxi').classList.remove('hidden');showToast('掃描成功！已辨識到 '+(state.scanMode==='taoxi'?'桃喜':'展品標記'));setTimeout(()=>{stopCamera(); if(state.scanMode==='taoxi')startQuestion(); else finishScanQuestion();},700)}
+function renderMap(){
+  renderDots('mapDots');
+  document.getElementById('foundCount').textContent=doneCount()+' / 5';
+  document.querySelectorAll('.zone').forEach(z=>z.classList.remove('done'));
+  order.forEach(k=>{if(state.done[k])document.querySelector('.z-'+k).classList.add('done')});
+  const list=document.getElementById('zoneList');
+  list.innerHTML=doneCount()===order.length?`<div class="completeNote"><p>經過一連串驚險又有趣的冒險，終於找回了所有遺失的【百味手帳】。</p><p>從嘉義滋味、城中日常、眷村生活、老店街，到充滿職人故事的百工巷……</p><p>每一本手帳裡，都藏著屬於嘉義的味道、記憶與故事。</p><p class="tiny">（已完成集點，請至集點頁面查看）</p></div>`:order.map(k=>{const z=zones[k],done=state.done[k];return `<button class="zoneBtn" onclick="selectZone('${k}')"><div class="zoneIcon ${done?'done':''}"><img src="${zoneIcons[k]}" alt="${z.name}圖示"></div><div class="zoneInfo"><b>${z.name}</b><span>${z.hint}</span></div><div class="stampMini ${done?'done':''}">${done?'已找回':'未完成'}</div></button>`}).join('');
+}
+function selectZone(k){state.current=k;state.qIndex=0;const z=zones[k];document.getElementById('clueTitle').textContent=z.mission?z.mission.title:z.name+'｜桃喜躲在哪裡？';document.getElementById('clueText').innerHTML=z.mission?z.mission.text.map(t=>t.replace(/\n/g,'<br>')).join('<br><br>')+(z.mission.tip?`<br><br><b>🔎 追蹤提示：${z.mission.tip}</b>`:''):`「${z.clue}」<br><span class="tiny">提示：${z.hint}</span>`;document.getElementById('melodyBtn').classList.toggle('hidden',!z.mission?.audio);document.getElementById('cluePhoto').src=z.photo;go('prelude')}
+let melody=null;
+function toggleMelody(){
+  const btn=document.getElementById('melodyBtn');
+  if(!melody){melody=new Audio(zones[state.current].mission.audio);melody.addEventListener('ended',()=>{btn.textContent='▶ 播放旋律'})}
+  if(!melody.paused){melody.pause();btn.textContent='▶ 播放旋律';return}
+  melody.play().then(()=>{btn.textContent='⏸ 暫停旋律'}).catch(()=>{btn.textContent='▶ 播放旋律'});
+}
+function stopMelody(){if(melody){melody.pause();melody=null}const btn=document.getElementById('melodyBtn');if(btn)btn.textContent='▶ 播放旋律'}
+function goScan(mode){state.scanMode=mode;document.getElementById('scanTitle').textContent=mode==='taoxi'?'AR 掃描桃喜':'AR 掃描展品';document.getElementById('scanHint').textContent=mode==='taoxi'?'請將鏡頭對準桃喜圖像':'請將鏡頭對準指定展品或標記';document.getElementById('arTaoxi').classList.add('hidden');go('scan');startCamera()}
+async function startCamera(){const v=document.getElementById('camera');try{if(!navigator.mediaDevices?.getUserMedia)throw new Error('no camera');const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false});v.srcObject=stream;v.classList.remove('hidden')}catch(e){v.classList.add('hidden')}}
+function stopCamera(){const v=document.getElementById('camera');if(v?.srcObject){v.srcObject.getTracks().forEach(t=>t.stop());v.srcObject=null}}
+function mockScan(){document.getElementById('arTaoxi').classList.remove('hidden');showToast('掃描成功！已辨識到 '+(state.scanMode==='taoxi'?'桃喜':'展品標記'));setTimeout(()=>{stopCamera(); if(state.scanMode==='taoxi'){if(cutsceneScripts[state.current]?.[0])go('cutscene');else startQuestion()}else finishScanQuestion();},700)}
 function startQuestion(){state.qIndex=0;renderQuestion();go('question')}
-function renderQuestion(){const z=zones[state.current];const q=z.questions[state.qIndex];document.getElementById('qStage').textContent=z.name+'｜'+q.stage;document.getElementById('questionNum').textContent=q.stage;document.getElementById('questionText').textContent=q.text;document.getElementById('feedback').classList.add('hidden');document.getElementById('inputWrap').classList.add('hidden');document.getElementById('puzzleWrap').classList.add('hidden');const opts=document.getElementById('questionOptions');opts.innerHTML='';if(q.type==='choice'){opts.innerHTML=q.options.map((op,i)=>`<button class="opt" onclick="chooseAnswer(${i})">${op}</button>`).join('')}else if(q.type==='text'){document.getElementById('inputWrap').classList.remove('hidden');document.getElementById('answerInput').value='';setTimeout(()=>document.getElementById('answerInput').focus(),150)}else if(q.type==='scan'){opts.innerHTML=`<button class="primary" onclick="goScan('object')">開始 AR 掃描</button><div class="demoNote">DEMO 會用照片與掃描框模擬辨識流程。</div>`}else if(q.type==='puzzle'){renderPuzzle()}}
+function renderQuestion(){const z=zones[state.current];const q=z.questions[state.qIndex];['questionNum','questionText'].forEach(id=>document.getElementById(id).classList.remove('hidden'));document.getElementById('qStage').textContent=z.name+'｜'+q.stage;document.getElementById('questionNum').textContent=q.stage;document.getElementById('questionText').textContent=q.text;document.getElementById('feedback').classList.add('hidden');document.getElementById('feedbackNextBtn').classList.add('hidden');document.getElementById('inputWrap').classList.add('hidden');const opts=document.getElementById('questionOptions');opts.innerHTML='';if(q.type==='choice'){opts.innerHTML=q.options.map((op,i)=>`<button class="opt" onclick="chooseAnswer(${i})">${op}</button>`).join('')}else if(q.type==='text'){document.getElementById('inputWrap').classList.remove('hidden');document.getElementById('answerInput').value='';setTimeout(()=>document.getElementById('answerInput').focus(),150)}else if(q.type==='shake'){opts.innerHTML=`<div class="shakeBox"><img src="${q.image}" alt="老屋模型結構圖"><div class="shakeCover" id="shakeCover"></div></div><div class="tiny" id="shakeProgress">顯現進度 0%</div><button class="secondary hidden" id="shakeEnable" onclick="enableMotion()">啟用搖動感應</button><button class="secondary" id="shakeTest" style="margin-top:10px" onclick="addReveal(25)">測試：模擬搖動</button>`;startShake()}else if(q.type==='multitext'){opts.innerHTML=`${q.fields.some(f=>f.image)?`<div class="emblemGrid">${q.fields.filter(f=>f.image).map(f=>`<figure><img src="${f.image}" alt="${f.caption}"><figcaption>${f.caption}</figcaption></figure>`).join('')}</div>`:''}${q.prompt?`<div class="question">${q.prompt}</div>`:''}${q.fields.map((f,i)=>`<label class="fieldRow"><span>${f.label}：</span><input class="answerInput" id="multiAnswer${i}" placeholder="請輸入答案"></label>`).join('')}<button class="primary" onclick="submitMultiAnswer()">送出</button>`}else if(q.type==='scan'){opts.innerHTML=`${q.image?`<img class="questionImage" src="${q.image}" alt="桃喜留下的圖片">`:''}${q.prompt?`<div class="question">${q.prompt}</div>`:''}<button class="primary" onclick="goScan('object')">開始 AR 掃描</button>`}else if(q.type==='assemble'){renderAssemble(q)}}
 function chooseAnswer(i){const q=zones[state.current].questions[state.qIndex];document.querySelectorAll('.opt').forEach((b,idx)=>{b.classList.remove('correct','wrong'); if(idx===q.answer)b.classList.add('correct'); else if(idx===i)b.classList.add('wrong')});if(i===q.answer){showFeedback(q.ok,true);setTimeout(nextStep,750)}else{showFeedback('再觀察一下展場線索，桃喜等你重試喔！',false)}}
 function submitTextAnswer(){const q=zones[state.current].questions[state.qIndex];const val=document.getElementById('answerInput').value.trim().replace(/\s/g,'');const answers=q.answer.map(a=>a.replace(/\s/g,''));if(answers.includes(val)){showFeedback(q.ok,true);setTimeout(nextStep,750)}else{showFeedback('答案還差一點點，請再仔細找找看。',false)}}
-function finishScanQuestion(){const q=zones[state.current].questions[state.qIndex];showFeedback(q.ok||'掃描成功！',true);go('question');setTimeout(nextStep,750)}
+let shake={progress:0,done:false,last:null,lastAt:0,on:false};
+function addReveal(amount){
+  if(shake.done)return;
+  shake.progress=Math.min(100,shake.progress+amount);
+  const cover=document.getElementById('shakeCover');
+  if(cover)cover.style.opacity=1-shake.progress/100;
+  const label=document.getElementById('shakeProgress');
+  if(label)label.textContent='顯現進度 '+shake.progress+'%';
+  if(shake.progress>=100){
+    shake.done=true;
+    document.getElementById('shakeTest').disabled=true;
+    showFeedback(zones[state.current].questions[state.qIndex].ok,true);
+    document.getElementById('feedbackNextBtn').classList.remove('hidden');
+    const qs=document.getElementById('screen-question');qs.scrollTop=qs.scrollHeight;
+  }
+}
+function onMotion(e){
+  const a=e.accelerationIncludingGravity;
+  if(!a)return;
+  const mag=Math.hypot(a.x||0,a.y||0,a.z||0),now=Date.now();
+  if(shake.last!==null&&Math.abs(mag-shake.last)>10&&now-shake.lastAt>120){shake.lastAt=now;addReveal(8)}
+  shake.last=mag;
+}
+function startShake(){
+  shake={progress:0,done:false,last:null,lastAt:0,on:false};
+  if(!('DeviceMotionEvent' in window))return;
+  if(typeof DeviceMotionEvent.requestPermission==='function'){document.getElementById('shakeEnable').classList.remove('hidden')}
+  else{window.addEventListener('devicemotion',onMotion);shake.on=true}
+}
+function enableMotion(){
+  DeviceMotionEvent.requestPermission().then(r=>{if(r==='granted'){window.addEventListener('devicemotion',onMotion);shake.on=true;document.getElementById('shakeEnable').classList.add('hidden')}}).catch(()=>{});
+}
+function stopShake(){window.removeEventListener('devicemotion',onMotion);shake.on=false}
+function submitMultiAnswer(){const q=zones[state.current].questions[state.qIndex];const ok=q.fields.every((f,i)=>f.answer.map(a=>a.replace(/\s/g,'')).includes(document.getElementById('multiAnswer'+i).value.trim().replace(/\s/g,'')));if(ok){showFeedback(q.ok,true);setTimeout(nextStep,750)}else{showFeedback('答案還差一點點，請再仔細找找看。',false)}}
+function finishScanQuestion(){const q=zones[state.current].questions[state.qIndex];showFeedback(q.ok||'掃描成功！',true);document.getElementById('questionOptions').innerHTML='';['questionNum','questionText'].forEach(id=>document.getElementById(id).classList.add('hidden'));document.getElementById('feedbackNextBtn').classList.remove('hidden');go('question');const qs=document.getElementById('screen-question');qs.scrollTop=qs.scrollHeight}
 function showFeedback(t,ok){const fb=document.getElementById('feedback');fb.innerHTML=(ok?'✅ ':'💡 ')+t;fb.classList.remove('hidden')}
-function nextStep(){state.qIndex++;const z=zones[state.current];if(state.qIndex>=z.questions.length){completeZone()}else{renderQuestion()}}
-function completeZone(){const k=state.current;state.done[k]=true;save();renderStamp(k);go('stamp');if(doneCount()===order.length)setTimeout(()=>go('reward'),900)}
-function renderStamp(k){const z=zones[k];document.getElementById('stampText').innerHTML=z.stamp + '<br>頁面';document.getElementById('stampTitle').textContent='獲得《百味手帳》頁面 × 1';document.getElementById('stampDesc').textContent=`已解鎖「${z.name}」支線小故事。`;document.getElementById('unlockStory').innerHTML=`<b>${z.storyTitle}</b><br><span class="tiny">${z.story.slice(0,70)}……</span>`;renderAll()}
-function renderStories(){const grid=document.getElementById('storyGrid');const taoxiStories=order.map(k=>{const z=zones[k], d=state.done[k];return `<button class="storyCard ${d?'':'locked'}" ${d?`onclick="openStory('${k}')"`:''}><div class="storyIcon" style="background:${z.color}">${d?'📖':'🔒'}</div><div><b>${z.storyTitle}</b><br><span class="tiny">桃喜日記｜${z.name}｜${d?'已解鎖':'完成主線任務後解鎖'}</span></div></button>`}).join('');const dailyStories=extraStories.map(s=>`<button class="storyCard" onclick="openStory('${s.id}')"><div class="storyIcon" style="background:#fe9f4d">📘</div><div><b>${s.storyTitle}</b><br><span class="tiny">${s.name}｜一開始即可閱讀</span></div></button>`).join('');grid.innerHTML=`<div class="storySection">桃喜日記（趣味性故事）</div>${taoxiStories}<div class="storySection">小嘉博日記（嘉義日常紀實）</div>${dailyStories}`}
+function nextStep(){state.qIndex++;const z=zones[state.current];if(state.qIndex>=z.questions.length){completeZone()}else if(cutsceneScripts[state.current]?.[state.qIndex]){go('cutscene')}else{renderQuestion()}}
+function completeZone(){const k=state.current;state.done[k]=true;save();renderStamp(k);go('stamp')}
+function renderStamp(k){const z=zones[k],stamp=document.getElementById('stampText');stamp.classList.add('hasArtwork');stamp.innerHTML=`<img class="stampArtwork" src="${zoneIcons[k]}" alt="${z.name}集章圖案">`;document.getElementById('stampTitle').textContent='獲得《百味手帳》頁面 × 1';document.getElementById('stampDesc').textContent=`已解鎖「${z.name}」支線小故事。`;document.getElementById('unlockStory').innerHTML=`<b>${z.storyTitle}</b><br><span class="tiny">${z.story.slice(0,70)}……</span>`;renderAll()}
+function renderStories(){
+  const grid=document.getElementById('storyGrid');
+  const taoxiStories=order.map(k=>{
+    const z=zones[k],d=state.done[k];
+    return `<button class="storyCard ${d?'':'locked'}" ${d?`onclick="openStory('${k}')"`:''}><div class="storyIcon"><img src="${diaryIcons[k]}" alt="${z.name}手帳圖示">${d?'':'<span aria-label="尚未解鎖">🔒</span>'}</div><div><b>${z.storyTitle}</b><br><span class="tiny">百味手帳｜${z.name}｜${d?'已解鎖':'完成主線任務後解鎖'}</span></div></button>`;
+  }).join('');
+  const dailyStories=extraStories.map((s,index)=>`<button class="storyCard" onclick="openStory('${s.id}')"><div class="storyIcon"><img src="${wikiIcons[index]}" alt="${s.storyTitle}豆知識圖示"></div><div><b>${s.storyTitle}</b><br><span class="tiny">${s.name}｜一開始即可閱讀</span></div></button>`).join('');
+  grid.innerHTML=`<div class="storySection">百味手帳</div>${taoxiStories}<div class="storySection">小嘉博豆知識</div>${dailyStories}`;
+}
 function openStory(k){let z=zones[k];if(!z){z=extraStories.find(s=>s.id===k)}if(!z)return;document.getElementById('storyZone').textContent=z.name;document.getElementById('storyTitle').textContent=z.storyTitle;document.getElementById('storyBody').innerHTML=z.story.split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).join('<br><br>');go('storyDetail')}
-function renderPuzzle(){const wrap=document.getElementById('puzzleWrap');wrap.classList.remove('hidden');document.getElementById('questionOptions').innerHTML='';wrap.innerHTML=`<div class="puzzle" id="puzzle"><div class="slot" data-need="屋頂">屋頂</div><div class="slot" data-need="窗框">窗框</div><div class="slot" data-need="門面">門面</div><div class="slot" data-need="招牌">招牌</div><div class="piece" draggable="true" data-val="窗框">窗框零件</div><div class="piece" draggable="true" data-val="屋頂">屋頂零件</div><div class="piece" draggable="true" data-val="招牌">招牌零件</div><div class="piece" draggable="true" data-val="門面">門面零件</div></div><button class="secondary" onclick="autoSolvePuzzle()">DEMO：自動完成拼圖</button>`;let drag=null;wrap.querySelectorAll('.piece').forEach(p=>{p.addEventListener('dragstart',e=>{drag=p});});wrap.querySelectorAll('.slot').forEach(s=>{s.addEventListener('dragover',e=>e.preventDefault());s.addEventListener('drop',e=>{e.preventDefault(); if(drag&&drag.dataset.val===s.dataset.need){s.textContent=s.dataset.need+' ✓';s.classList.add('filled');drag.remove();checkPuzzle()}else showToast('位置不對，換個零件試試看！')})})}
-function autoSolvePuzzle(){document.querySelectorAll('.slot').forEach(s=>{s.textContent=s.dataset.need+' ✓';s.classList.add('filled')});document.querySelectorAll('.piece').forEach(p=>p.remove());checkPuzzle()}
-function checkPuzzle(){if(document.querySelectorAll('.slot.filled').length===4){showFeedback(zones[state.current].questions[state.qIndex].ok,true);setTimeout(nextStep,800)}}
+const assemble={armed:null,placed:[],drag:null,q:null};
+function renderAssemble(q){
+  assemble.armed=null;assemble.placed=[];assemble.q=q;
+  document.getElementById('questionOptions').innerHTML=`<div class="tiny tipsTitle">${q.tipsTitle}</div><ol class="tipsList">${q.tips.map(t=>`<li>${t}</li>`).join('')}</ol><div class="assembleStage" id="assembleStage" onclick="assembleStageClick(event)"><img class="assembleFrame" src="${q.frame}" alt="老屋木構架" draggable="false">${q.pieces.map((p,i)=>`<img class="assembleGhost" id="piece-${p.id}" src="${p.image}" alt="" draggable="false" style="${assembleBox(p.box,1)}">`).join('')}</div><div class="assembleTray" id="assembleTray">${q.pieces.map(p=>`<button type="button" class="assemblePiece" id="tray-${p.id}" aria-label="${p.label}零件" onpointerdown="startAssembleDrag(event,'${p.id}')"><img src="${p.image}" alt="" draggable="false"><span>${p.label}</span></button>`).join('')}</div><button class="secondary" id="assembleAuto" style="margin-top:10px" onclick="autoAssemble()">測試：自動完成拼圖</button>`;
+}
+function assembleBox(b,z){return `left:${b.x/620*100}%;top:${b.y/500*100}%;width:${b.w/620*100}%;height:${b.h/500*100}%;z-index:${z}`}
+function placeAssemble(id){
+  const q=assemble.q,item=q.pieces.find(p=>p.id===id);
+  if(assemble.placed.includes(id))return;
+  assemble.placed.push(id);assemble.armed=null;
+  const img=document.getElementById('piece-'+id);
+  img.className='assemblePlaced';img.alt=item.label;img.style.cssText=assembleBox(item.box,q.pieces.indexOf(item)+2);
+  document.getElementById('tray-'+id).remove();
+  if(assemble.placed.length<q.pieces.length){showFeedback(item.label+'已固定！',true);return}
+  showFeedback(q.ok,true);
+  document.getElementById('assembleAuto').disabled=true;
+  document.getElementById('feedbackNextBtn').classList.remove('hidden');
+  const qs=document.getElementById('screen-question');qs.scrollTop=qs.scrollHeight;
+}
+function tryAssemble(id,cx,cy){
+  const q=assemble.q,item=q.pieces.find(p=>p.id===id),r=document.getElementById('assembleStage').getBoundingClientRect();
+  const x=(cx-r.left)/r.width*620,y=(cy-r.top)/r.height*500,b=item.box,m=14;
+  if(x>=b.x-m&&x<=b.x+b.w+m&&y>=b.y-m&&y<=b.y+b.h+m)placeAssemble(id);
+  else showFeedback('位置不對，換個地方試試看！',false);
+}
+function startAssembleDrag(e,id){
+  e.preventDefault();
+  const sx=e.clientX,sy=e.clientY;let moved=false,ghost=null;
+  const src=assemble.q.pieces.find(p=>p.id===id).image;
+  const move=ev=>{
+    if(Math.hypot(ev.clientX-sx,ev.clientY-sy)>6)moved=true;
+    if(!moved)return;
+    if(!ghost){ghost=document.createElement('img');ghost.src=src;ghost.className='dragGhost';document.body.appendChild(ghost)}
+    ghost.style.left=ev.clientX+'px';ghost.style.top=ev.clientY+'px';
+  };
+  const stop=()=>{window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',up);window.removeEventListener('pointercancel',stop);if(ghost)ghost.remove()};
+  const up=ev=>{
+    stop();
+    if(moved)tryAssemble(id,ev.clientX,ev.clientY);
+    else{assemble.armed=id;document.querySelectorAll('.assemblePiece').forEach(b=>b.classList.toggle('armed',b.id==='tray-'+id))}
+  };
+  window.addEventListener('pointermove',move);window.addEventListener('pointerup',up);window.addEventListener('pointercancel',stop);
+}
+function assembleStageClick(e){if(assemble.armed)tryAssemble(assemble.armed,e.clientX,e.clientY)}
+function autoAssemble(){assemble.q.pieces.forEach(p=>placeAssemble(p.id))}
 function renderComplete(){document.getElementById('completeGrid').innerHTML=order.map(k=>`<div class="pageMark ${state.done[k]?'done':''}">${state.done[k]?'✓':''}</div>`).join('')}
 function renderPoints(){
   const count=doneCount();
@@ -387,7 +827,7 @@ function renderPoints(){
   document.getElementById('pointTrackFill').style.width=(count/order.length*100)+'%';
   document.getElementById('pointTrackText').textContent=count===order.length?'五章集滿！獎勵兌換資格已解鎖。':`再完成 ${order.length-count} 個展區，就能集滿五章。`;
   document.getElementById('pointMessage').textContent=count===order.length?'恭喜完成桃城百味集點任務！':'完成展區任務即可獲得一枚特色印章。';
-  document.getElementById('pointStampGrid').innerHTML=order.map(k=>{const z=zones[k],done=state.done[k];return `<div class="stampItem ${done?'done':''}"><div class="stampCircle">${done?'✓':'?'}</div><b>${z.name}</b></div>`}).join('');
+  document.getElementById('pointStampGrid').innerHTML=order.map(k=>{const z=zones[k],done=state.done[k];return `<div class="stampItem ${done?'done':''}"><div class="stampCircle"><img src="${zoneIcons[k]}" alt="${z.name}集章圖案">${done?'<span aria-label="已完成">✓</span>':''}</div><b>${z.name}</b></div>`}).join('');
   document.getElementById('rewardStatus').textContent=count===order.length?'已解鎖兌換資格':'尚未集滿';
   document.getElementById('rewardButton').classList.toggle('hidden',count!==order.length);
 }

@@ -40,7 +40,10 @@ function reset() {
           class="stampItem"
           :class="{ done: game.done[id] }"
         >
-          <div class="stampCircle">{{ game.done[id] ? "✓" : "?" }}</div>
+          <div class="stampCircle">
+            <img :src="`/${zones[id].mapIcon}`" :alt="`${zones[id].name}集章圖案`" />
+            <span v-if="game.done[id]" aria-label="已完成">✓</span>
+          </div>
           <b>{{ zones[id].name }}</b>
         </div>
       </div>

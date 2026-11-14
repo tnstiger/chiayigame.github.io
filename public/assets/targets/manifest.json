@@ -63,5 +63,33 @@
     ],
     "scaleCount": 8,
     "previewScale": 8
+  },
+  {
+    "id": "food-douhua-level3",
+    "label": "嘉義滋味 豆漿豆花",
+    "image": "food-douhua-level3.jpg",
+    "targetIndex": 5,
+    "file": "food-douhua-level3.mind",
+    "dimensions": [
+      889,
+      768
+    ],
+    "scaleCount": 10,
+    "matchingPoints": 3162,
+    "trackingPoints": 57
+  },
+  {
+    "id": "craft-wind-chicken-level3",
+    "label": "百工巷 管樂小雞刺繡",
+    "image": "craft-wind-chicken-level3.jpg",
+    "targetIndex": 6,
+    "file": "craft-wind-chicken-level3.mind",
+    "dimensions": [
+      957,
+      768
+    ],
+    "scaleCount": 10,
+    "matchingPoints": 3377,
+    "trackingPoints": 77
   }
 ]
