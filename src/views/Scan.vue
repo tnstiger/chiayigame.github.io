@@ -5,12 +5,15 @@ import { asset } from "../data/game.js";
 import { game, foundTaoxi, finishQuestion, notify } from "../store.js";
 import { nextPath } from "../progress.js";
 import { scanner } from "../services/scanner.js";
+import { scanTargetFor } from "../services/scan-targets.js";
 import TopBar from "../components/TopBar.vue";
 const route = useRoute(),
   router = useRouter(),
   id = route.params.zone;
 const number = Number(route.params.number),
   isTaoxi = route.params.mode === "taoxi";
+const target = scanTargetFor(id, route.params.mode, number);
+const testControls = import.meta.env.DEV;
 const video = ref(null),
   message = ref("準備好後，按下「啟動相機辨識」。"),
   canStart = ref(true),
@@ -22,12 +25,16 @@ async function start() {
   if (!alive || running || found.value) return;
   running = true;
   canStart.value = false;
-  await scanner.start(video.value, (text, error) => {
-    if (!alive) return;
-    message.value = text;
-    canStart.value = !!error;
-    if (error) running = false;
-  });
+  await scanner.start(
+    video.value,
+    (text, error) => {
+      if (!alive) return;
+      message.value = text;
+      canStart.value = !!error;
+      if (error) running = false;
+    },
+    target?.id,
+  );
 }
 function complete() {
   found.value = true;
@@ -41,18 +48,18 @@ function complete() {
     if (isTaoxi) {
       foundTaoxi(id);
       router.replace(nextPath(id, 0));
-    } else if (finishQuestion(id, number))
-      router.replace(nextPath(id, number));
+    } else if (finishQuestion(id, number)) router.replace(nextPath(id, number));
   }, 700);
 }
 function success(event) {
   if (!alive || found.value || !running || event.detail?.source !== "mindar")
     return;
+  if (event.detail?.targetId !== target?.id) return;
   complete();
 }
 // Test shortcut: treat the scan as successful without the camera.
 function skip() {
-  if (!alive || found.value) return;
+  if (!testControls || !alive || found.value) return;
   complete();
 }
 onMounted(() => {
@@ -94,7 +101,11 @@ onBeforeUnmount(() => {
           alt="桃喜 AR"
         /><button v-if="canStart" class="scanBtn" @click="start">
           啟動相機辨識</button
-        ><button v-if="!found" class="scanBtn testSkip" @click="skip">
+        ><button
+          v-if="testControls && !found"
+          class="scanBtn testSkip"
+          @click="skip"
+        >
           測試：略過掃描
         </button>
       </div>

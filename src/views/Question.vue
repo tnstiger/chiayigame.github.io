@@ -20,8 +20,11 @@ const answer = ref(""),
   armed = ref(null),
   drag = ref(null),
   stage = ref(null);
+const testControls = import.meta.env.DEV;
 const pieces = question.pieces || [];
-let timer;
+let timer,
+  cancelDrag,
+  alive = true;
 function next() {
   if (!finishQuestion(id, number)) return;
   router.push(nextPath(id, number));
@@ -100,6 +103,7 @@ function tryPlace(id, clientX, clientY) {
 }
 function startDrag(event, item) {
   if (accepted.value) return;
+  cancelDrag?.();
   const startX = event.clientX,
     startY = event.clientY;
   let moved = false;
@@ -112,6 +116,7 @@ function startDrag(event, item) {
     window.removeEventListener("pointerup", up);
     window.removeEventListener("pointercancel", stop);
     drag.value = null;
+    cancelDrag = null;
   };
   const up = (e) => {
     stop();
@@ -119,6 +124,7 @@ function startDrag(event, item) {
     if (moved) tryPlace(item.id, e.clientX, e.clientY);
     else armed.value = item.id;
   };
+  cancelDrag = stop;
   window.addEventListener("pointermove", move);
   window.addEventListener("pointerup", up);
   window.addEventListener("pointercancel", stop);
@@ -130,7 +136,10 @@ function autoSolve() {
   for (const item of pieces) if (!accepted.value) place(item);
 }
 const reveal = ref(0),
-  canAskMotion = ref(false);
+  canAskMotion = ref(false),
+  motionPending = ref(false),
+  manualReveal = ref(false),
+  motionMessage = ref("");
 let lastMagnitude = null,
   lastShake = 0;
 function addReveal(amount) {
@@ -162,23 +171,39 @@ function onMotion(event) {
   lastMagnitude = magnitude;
 }
 async function enableMotion() {
+  if (motionPending.value || !alive) return;
+  motionPending.value = true;
   try {
-    if ((await DeviceMotionEvent.requestPermission()) === "granted") {
+    const permission = await DeviceMotionEvent.requestPermission();
+    if (!alive) return;
+    if (permission === "granted") {
       window.addEventListener("devicemotion", onMotion);
       canAskMotion.value = false;
+      motionMessage.value = "搖動感應已啟用，請搖動手機。也可以點按顯現照片。";
+    } else {
+      motionMessage.value = "未允許搖動感應，可改用點按顯現照片。";
     }
   } catch {
-    // Permission denied; the test button still works.
+    if (alive) motionMessage.value = "無法啟用搖動感應，可改用點按顯現照片。";
+  } finally {
+    motionPending.value = false;
   }
 }
 onMounted(() => {
-  if (question.type !== "shake" || !("DeviceMotionEvent" in window)) return;
+  if (question.type !== "shake") return;
+  manualReveal.value = true;
+  if (!("DeviceMotionEvent" in window)) {
+    motionMessage.value = "此裝置不支援搖動感應，請點按顯現照片。";
+    return;
+  }
   if (typeof DeviceMotionEvent.requestPermission === "function")
     canAskMotion.value = true;
   else window.addEventListener("devicemotion", onMotion);
 });
 onBeforeUnmount(() => {
+  alive = false;
   clearTimeout(timer);
+  cancelDrag?.();
   window.removeEventListener("devicemotion", onMotion);
 });
 </script>
@@ -242,7 +267,11 @@ onBeforeUnmount(() => {
           </figure>
         </div>
         <div v-if="question.prompt" class="question">{{ question.prompt }}</div>
-        <label v-for="(field, index) in question.fields" :key="field.label" class="fieldRow">
+        <label
+          v-for="(field, index) in question.fields"
+          :key="field.label"
+          class="fieldRow"
+        >
           <span>{{ field.label }}：</span>
           <input
             v-model="answers[index]"
@@ -260,15 +289,24 @@ onBeforeUnmount(() => {
           <div class="shakeCover" :style="{ opacity: 1 - reveal / 100 }"></div>
         </div>
         <div class="tiny">顯現進度 {{ reveal }}%</div>
-        <button v-if="canAskMotion" class="secondary" @click="enableMotion">
+        <div v-if="motionMessage" class="tiny" role="status">
+          {{ motionMessage }}
+        </div>
+        <button
+          v-if="canAskMotion"
+          class="secondary"
+          :disabled="motionPending || accepted"
+          @click="enableMotion"
+        >
           啟用搖動感應</button
         ><button
+          v-if="manualReveal"
           class="secondary"
           style="margin-top: 10px"
           :disabled="accepted"
           @click="addReveal(25)"
         >
-          測試：模擬搖動</button
+          點按顯現照片</button
         ><button
           v-if="accepted"
           class="primary"
@@ -337,6 +375,7 @@ onBeforeUnmount(() => {
           </button>
         </div>
         <button
+          v-if="testControls"
           class="secondary"
           style="margin-top: 10px"
           :disabled="accepted"

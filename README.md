@@ -17,14 +17,20 @@ Vue 3 + Vite + Vue Router 的手機實境遊戲。以案主 0930 版本的內容
 - **手帳圖示與素材**：為五篇主線手帳及五篇豆知識加入專屬圖示；新增角色頭像、軍徽、老屋拼圖零件、圖片線索與大同歌曲音檔。
 - **版本同步與測試**：Vue 新版與根目錄 `demo.html` 同步更新；補充關卡流程與互動測試。
 
-## 協作夥伴待辦：第 3 小關 AR 掃描圖
+## AR 掃描圖與關卡對應
 
-以下兩關的實際 AR 辨識目標尚待協作夥伴更新。本次提交提供參考圖，但不修改 MindAR 辨識資料或掃描流程；這些參考圖目前尚未編入 `targets.mind`：
+辨識檔保留原五張展區桃喜，並新增兩張展品參考圖：
 
-- **嘉義滋味｜第 3 小關（豆漿豆花）**：原圖 `assets/img/嘉義滋味第3小關AR掃描.jpg`，參考副本 `public/assets/targets/food-douhua-level3.jpg`。
-- **百工巷｜第 3 小關（管樂小雞刺繡）**：原圖 `assets/img/百工巷第3小關AR掃描.jpg`，參考副本 `public/assets/targets/craft-wind-chicken-level3.jpg`。
+- 嘉義滋味第 3 小關（路由 question 2）：`food-douhua-level3.jpg`，辨識 ID `food-douhua-level3`。
+- 百工巷第 3 小關（路由 question 2）：`craft-wind-chicken-level3.jpg`，辨識 ID `craft-wind-chicken-level3`。
 
-請協作夥伴將兩張參考圖加入為第 3 小關的辨識目標（不要覆蓋五張展區桃喜目標），設定各關只接受正確目標，重新編譯 `public/assets/targets/targets.mind`，並同步維護個別目標檔、`public/assets/targets/manifest.json` 和 `src/services/scan-targets.js`。完成後請驗證這兩關及原有五區尋找桃喜的掃描流程。
+每區尋找桃喜只接受該區的桃喜圖；兩個展品掃描關卡只接受各自展品圖。其他圖片不會記錄進度。合併檔、個別 `.mind`、`manifest.json` 及 `src/services/scan-targets.js` 的順序一致。
+
+重建新增辨識圖：先執行 `npm run dev -- --port 4178`，另開終端執行 `node scripts/compile-scan-targets.mjs`。腳本使用官方 MindAR 1.2.5 Compiler，保留合併檔的前五張目標，只重新編譯兩張展品；以完整參考圖等比例縮至最長邊不超過 1024 px。若要更換原五張桃喜，需另外重新編譯，不能使用此腳本取代。`node scripts/verify-scan-targets.mjs` 檢查個別檔與合併檔一致，並使用真實 MindAR 對七張平面圖逐一比對七個目標。
+
+本機開發模式才顯示略過掃描、自動拼圖；正式建置不顯示這些測試捷徑。搖動顯影提供 iOS 感測權限請求及失敗回饋，也提供點按顯現，讓無法使用感測器的玩家完成相同任務。
+
+上述自動測試不取代 iPhone Safari、Android Chrome 及實際展場圖的相機辨識驗收。
 
 ## 開發與驗證
 
@@ -66,11 +72,9 @@ npm run build
 
 `src/services/scanner.js` 使用 MindAR 1.2.5，從固定版本 CDN 載入；需要網路、WebGL，以及 HTTPS 或 localhost。首頁空閒時預載模組、辨識檔並用空白畫布預熱，不呼叫相機。按下掃描後開啟後鏡頭；連續兩次比對成功發出一次 `scanSuccess`。
 
-所有掃描目前只接受五張新版桃喜圖片：嘉義滋味、城中日常、生活家屋、老店街、百工巷。`public/assets/targets/targets.mind` 包含五張已編譯目標，獨立 `.mind` 與 PNG 依 `taoxi-展區代號` 命名。舊六目標與素材保留於 `archive/six-targets/`，不再載入辨識。
+合併 `public/assets/targets/targets.mind` 包含七張目標：0 嘉義滋味桃喜、1 城中日常桃喜、2 生活家屋桃喜、3 老店街桃喜、4 百工巷桃喜、5 豆漿豆花、6 管樂小雞刺繡。每輪只比對目前關卡指定的目標，連續兩輪成功才發出一次 `scanSuccess`，事件包含 `targetIndex`、`targetId`、`targetLabel`；頁面再次核對目標 ID 後才處理進度。
 
-合併檔的索引依序為 0：嘉義滋味（food）、1：城中日常（daily）、2：生活家屋（home）、3：老店街（store）、4：百工巷（craft）。`src/services/scan-targets.js` 與 `public/assets/targets/manifest.json` 記錄此順序。每一輪偵測依序比對五張目標，連續兩輪辨識到同一目標才發出 `scanSuccess`；事件包含 `targetIndex`、`targetId`、`targetLabel`。目前任一新目標都可完成掃描關卡，尚未限定各關只能掃描同名展區圖片。
-
-編譯用圖裁掉透明留白、鋪白底，等比例調整至最長邊 1024 px，保持原始角色造型。Compiler 的 Scale 分頁只影響預覽，下載的 `.mind` 包含全部尺度。五張的相機辨識效果仍需以實際展示方式進行手機驗收。
+舊六目標與素材保留於 `archive/six-targets/`，不再載入辨識。原五張桃喜的編譯資料保持不變。
 
 ## Cloudflare Pages
 

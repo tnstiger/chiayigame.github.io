@@ -113,6 +113,7 @@ export function createScanner() {
           targetIndex < scanTargets.length;
           targetIndex++
         ) {
+          if (scan.targetId !== scanTargets[targetIndex].id) continue;
           const { modelViewTransform } = await controller.match(
             featurePoints,
             targetIndex,
@@ -171,9 +172,14 @@ export function createScanner() {
     }
   }
 
-  async function start(video, onStatus) {
+  async function start(video, onStatus, targetId) {
     stop();
+    if (!scanTargets.some((target) => target.id === targetId)) {
+      onStatus("此關卡未設定辨識圖片，請返回關卡後重試。", true);
+      return;
+    }
     const scan = {
+      targetId,
       video,
       abort: new AbortController(),
       stream: null,
